@@ -2,418 +2,501 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NuWayMind | Operational Automation & Governance</title>
-  <meta name="description" content="NuWayMind helps organizations automate operational workflows, strengthen governance, and deliver measurable performance across procurement and business operations." />
+  <meta name="description" content="NuWayMind helps organizations automate operational workflows, strengthen governance, and deliver measurable performance." />
 
   <!-- Satoshi (quick start CDN; self-host if preferred) -->
   <link rel="preconnect" href="https://fonts.cdnfonts.com">
   <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
 
-  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0b1220;
+      --muted:#5b6777;
+      --border:#e7edf4;
+      --accent:#38CEE7;
+      --accent2:#4e5963;
+      --shadow:0 10px 28px rgba(11,18,32,.08);
+      --radius:16px;
+      --max:1080px;
+    }
+
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      font-family:"Satoshi",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
+      font-size:14pt; /* requested: at least 14pt everywhere */
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    img{ display:block; max-width:100%; }
+
+    .container{ max-width:var(--max); margin:0 auto; padding:0 18px; }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .hdr{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .logo{ width:300px; height:auto; }
+
+    nav{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end; }
+    nav a{
+      font-size:14pt;
+      color:var(--accent2);
+      padding:8px 10px;
+      border-radius:12px;
+    }
+    nav a:hover{
+      background:rgba(56,206,231,.10);
+      text-decoration:none;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      font-weight:800;
+      font-size:14pt;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid transparent;
+      transition:transform .15s ease, box-shadow .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform:translateY(-1px); text-decoration:none; }
+    .btnPrimary{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#05212b;
+      box-shadow:0 14px 26px rgba(56,206,231,.18);
+    }
+    .btnGhost{
+      background:rgba(56,206,231,.08);
+      border-color:rgba(56,206,231,.22);
+      color:var(--accent2);
+    }
+
+    /* Layout */
+    section{ padding:22px 0; }
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    /* Hero */
+    .hero{ padding:30px 0 18px; }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      font-weight:800;
+      font-size:14pt;
+      color:var(--accent2);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 6px rgba(56,206,231,.12);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(24pt, 3vw, 34pt);
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+    p{ margin:0; font-size:14pt; }
+    .sub{ color:var(--muted); margin:0 0 16px; }
+
+    .ctaRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+
+    .points{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
+    }
+    .point{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px;
+      background:#fff;
+    }
+    .point strong{
+      display:block;
+      font-size:14pt;
+      color:var(--text);
+    }
+    .point span{
+      display:block;
+      margin-top:6px;
+      color:var(--muted);
+      font-size:14pt;
+    }
+
+    .imgCard{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      min-height:360px;
+      background:#fff;
+    }
+    .imgCard img{ width:100%; height:100%; object-fit:cover; }
+    .imgFade{
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,0) 55%, rgba(255,255,255,.96) 100%);
+      pointer-events:none;
+    }
+    .imgCap{
+      position:absolute; left:12px; right:12px; bottom:12px;
+      border:1px solid rgba(231,237,244,.95);
+      background:rgba(255,255,255,.92);
+      border-radius:14px;
+      padding:12px 14px;
+      color:var(--accent2);
+      font-weight:800;
+      font-size:14pt;
+    }
+
+    /* Headings */
+    .head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    h2{
+      margin:0;
+      font-size:18pt;
+      letter-spacing:-.01em;
+    }
+    .head p{
+      margin:0;
+      color:var(--muted);
+      font-size:14pt;
+      max-width:72ch;
+    }
+
+    /* Capability cards */
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+    }
+    .mini{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+      background:#fff;
+      box-shadow:0 8px 18px rgba(11,18,32,.06);
+    }
+    .mini h3{
+      margin:0 0 8px;
+      font-size:15pt;
+    }
+    .mini p{
+      margin:0;
+      color:var(--muted);
+      font-size:14pt;
+    }
+
+    /* Simple automation block */
+    .tint{
+      background: rgba(56,206,231,.05);
+      border-top:1px solid rgba(231,237,244,.9);
+      border-bottom:1px solid rgba(231,237,244,.9);
+    }
+    ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:14pt;
+    }
+    li{ margin:10px 0; }
+    li strong{ color:var(--text); }
+
+    /* Contact */
+    .contactBox{
+      border:1px solid rgba(56,206,231,.22);
+      background:linear-gradient(180deg, rgba(56,206,231,.12), rgba(255,255,255,1));
+      border-radius:20px;
+      box-shadow:0 18px 44px rgba(56,206,231,.14);
+      padding:18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:12px;
+    }
+    .form{ display:grid; gap:12px; margin-top:10px; }
+    .row{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+    label{
+      display:grid; gap:8px;
+      font-size:14pt;
+      font-weight:800;
+      color:var(--accent2);
+    }
+    input, textarea{
+      width:100%;
+      border-radius:14px;
+      border:1px solid var(--border);
+      padding:12px;
+      font:inherit;
+      font-size:14pt;
+      outline:none;
+      background:#fff;
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(56,206,231,.65);
+      box-shadow: 0 0 0 4px rgba(56,206,231,.12);
+    }
+    textarea{ resize:vertical; min-height:120px; }
+
+    .side{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.92);
+      border-radius:16px;
+      padding:16px;
+    }
+    .side strong{
+      display:block;
+      font-size:14pt;
+      color:var(--accent2);
+      margin-bottom:8px;
+    }
+    .side p{ color:var(--muted); font-size:14pt; margin:0; }
+    .hr{ height:1px; background:rgba(231,237,244,.95); margin:12px 0; }
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--border);
+      padding:18px 0 28px;
+      color:var(--muted);
+      font-size:14pt;
+    }
+    .ftr{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .ftr a{ color:var(--accent2); }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      nav{ display:none; }
+      .heroGrid{ grid-template-columns:1fr; }
+      .points{ grid-template-columns:1fr; }
+      .grid3{ grid-template-columns:1fr; }
+      .contactBox{ grid-template-columns:1fr; }
+      .row{ grid-template-columns:1fr; }
+      .logo{ width:260px; }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Sticky Header -->
-  <header class="hdr" id="top">
-    <div class="container hdr__inner">
-      <a class="brand" href="#top" aria-label="NuWayMind home">
-        <img
-          src="./NuWayMind Sky Cyan - Cool Grey 80 Arts of Applied Experience.png"
-          alt="NuWayMind logo"
-          class="brand__logo"
-          width="300"
-        />
+  <header>
+    <div class="container hdr">
+      <a href="#top" aria-label="NuWayMind home">
+        <img class="logo" src="./images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="NuWayMind logo" width="300" />
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#capabilities" class="nav__link">Capabilities</a>
-        <a href="#platform" class="nav__link">Automation</a>
-        <a href="#outcomes" class="nav__link">Outcomes</a>
-        <a href="#work" class="nav__link">How we work</a>
-        <a href="#contact" class="btn btn--ghost">Talk to us</a>
-        <a href="#contact" class="btn btn--primary">Request a proposal</a>
+      <nav aria-label="Primary">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#automation">Automation</a>
+        <a href="#contact" class="btn btnGhost">Talk to us</a>
+        <a href="#contact" class="btn btnPrimary">Request a proposal</a>
       </nav>
-
-      <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <!-- Mobile nav -->
-    <div class="mnav" id="mnav" aria-hidden="true">
-      <div class="container mnav__inner">
-        <a href="#capabilities" class="mnav__link">Capabilities</a>
-        <a href="#platform" class="mnav__link">Automation</a>
-        <a href="#outcomes" class="mnav__link">Outcomes</a>
-        <a href="#work" class="mnav__link">How we work</a>
-        <a href="#contact" class="btn btn--primary mnav__cta">Request a proposal</a>
-      </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO (marketing / automation) -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <div class="badgeLine">
-            <span class="dot" aria-hidden="true"></span>
-            Operational automation • Governance • Measurable outcomes
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container heroGrid">
+        <div class="card">
+          <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Operational automation and governance</div>
+
+          <h1>Automate workflows.</h1>
+          <h1>Improve control.</h1>
+          <h1>Deliver outcomes.</h1>
+<p class="sub">
+          NuWayMind helps organizations simplify complex operational processes through clear operating models and
+          practical automation—reducing manual effort, cycle time, and compliance exceptions.
+        </p>
+
+          <div class="ctaRow">
+            <a class="btn btnPrimary" href="#contact">Book discovery call</a>
+            <a class="btn btnGhost" href="#capabilities">View capabilities</a>
           </div>
 
-          <h1 class="hero__title">
-            Turn complex operations into automated, audit-ready workflows.
-          </h1>
-
-          <p class="hero__sub">
-            NuWayMind designs operating models and implements automation that reduces manual effort,
-            shortens cycle times, and improves compliance—without slowing the business.
-          </p>
-
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="#contact">Book a discovery call</a>
-            <a class="btn btn--ghost" href="#platform">See automation approach</a>
-          </div>
-
-          <div class="hero__proof">
-            <div class="proof">
-              <strong>Workflow clarity</strong>
-              <span>Standardize processes, roles, and controls</span>
+          <div class="points">
+            <div class="point">
+              <strong>Clarity</strong>
+              <span>Process, roles (RACI), approvals (DOA), SOPs.</span>
             </div>
-            <div class="proof">
+            <div class="point">
               <strong>Automation</strong>
-              <span>Digitize approvals, onboarding, evidence capture</span>
+              <span>Routing, templates, portals, evidence capture.</span>
             </div>
-            <div class="proof">
+            <div class="point">
               <strong>Governance</strong>
-              <span>Traceability, reporting, and continuous improvement</span>
+              <span>Traceability, KPIs, continuous improvement.</span>
             </div>
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="visualCard">
-            <img
-              src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 551577.png"
-              alt="Modern team meeting with dashboards"
-            />
-            <div class="visualCard__fade" aria-hidden="true"></div>
-            <div class="visualCard__panel">
-              <div class="panelTitle">Automation-first operating model</div>
-              <div class="panelText">
-                Reduce friction with smart routing, templates, and evidence-by-design.
-              </div>
-            </div>
-          </div>
-
-          <div class="signal">
-            <div class="signal__item">
-              <span class="signal__k">Typical focus</span>
-              <span class="signal__v">Procurement & cross-functional operations</span>
-            </div>
-            <div class="signal__item">
-              <span class="signal__k">Delivery style</span>
-              <span class="signal__v">Pragmatic, modular, outcome-driven</span>
-            </div>
-            <div class="signal__item">
-              <span class="signal__k">Best fit</span>
-              <span class="signal__v">Regulated and performance-critical environments</span>
-            </div>
-          </div>
+        <div class="imgCard" aria-label="Modern team meeting">
+          <img src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 551577.png" alt="Modern meeting with dashboards" />
+          <div class="imgFade" aria-hidden="true"></div>
+          <div class="imgCap">Simple, adoption-first automation.</div>
         </div>
       </div>
     </section>
 
     <!-- CAPABILITIES -->
-    <section class="section" id="capabilities">
+    <section id="capabilities">
       <div class="container">
         <div class="head">
           <h2>Capabilities</h2>
-          <p>
-            End-to-end support from operating model design to automation rollout and stabilization.
-          </p>
+          <p>Three simple modules. Combine as needed.</p>
         </div>
 
         <div class="grid3">
-          <article class="card">
-            <h3>Operating model design</h3>
-            <p>
-              Target operating model, roles (RACI), approval matrix (DOA), SOPs, controls, and KPIs—built for adoption.
-            </p>
-            <div class="chips">
-              <span class="chip">TOM</span><span class="chip">RACI</span><span class="chip">DOA</span><span class="chip">SOPs</span>
-            </div>
-          </article>
-
-          <article class="card">
+          <div class="mini">
+            <h3>Operating model</h3>
+            <p>Target workflows, controls, DOA/RACI, SOPs, and KPI cadence.</p>
+          </div>
+          <div class="mini">
             <h3>Workflow automation</h3>
-            <p>
-              Automated routing, portals, templates, and evidence capture—reducing manual work and exceptions.
-            </p>
-            <div class="chips">
-              <span class="chip">Approvals</span><span class="chip">Portals</span><span class="chip">Templates</span><span class="chip">Audit trail</span>
-            </div>
-          </article>
-
-          <article class="card">
+            <p>Approvals, routing, templates, portals, and audit trail by design.</p>
+          </div>
+          <div class="mini">
             <h3>Supplier onboarding & risk</h3>
-            <p>
-              Standardized onboarding, questionnaires, segmentation and scoring—structured for governance and scalability.
-            </p>
-            <div class="chips">
-              <span class="chip">KYS</span><span class="chip">ABAC</span><span class="chip">ESG</span><span class="chip">Risk scoring</span>
-            </div>
-          </article>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="grid2">
-          <article class="card card--wide">
-            <h3>Source-to-Contract and Procure-to-Pay</h3>
-            <p>
-              Build consistent sourcing and purchasing workflows that users actually follow—integrated with governance,
-              reporting, and supplier collaboration.
-            </p>
-            <ul class="list">
-              <li>RFX structure and evaluation frameworks</li>
-              <li>Contract evidence and obligation tracking</li>
-              <li>Requisition-to-PO automation and policy controls</li>
-              <li>Invoice validation and exception management</li>
-            </ul>
-          </article>
-
-          <article class="card card--wide">
-            <h3>Compliance by design</h3>
-            <p>
-              Governance embedded into the workflow—so teams stay compliant without constant policing.
-            </p>
-            <ul class="list">
-              <li>Evidence points defined upfront</li>
-              <li>Standard templates and controlled variants</li>
-              <li>Control monitoring and KPI cadence</li>
-              <li>Audit-ready traceability across transactions</li>
-            </ul>
-          </article>
+            <p>Standard onboarding packs, questionnaires, and practical scoring.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- AUTOMATION / PLATFORM STYLE SECTION -->
-    <section class="section section--tint" id="platform">
+    <!-- AUTOMATION -->
+    <section class="tint" id="automation">
       <div class="container">
         <div class="head">
           <h2>Automation style</h2>
-          <p>
-            Designed like a product: clear user journeys, minimal friction, and measurable outcomes.
-          </p>
+          <p>Minimal friction for users, strong controls for stakeholders.</p>
         </div>
 
-        <div class="split">
-          <div class="card">
-            <h3>What gets automated</h3>
-            <div class="stack">
-              <div class="stackRow">
-                <div class="stackIcon">1</div>
-                <div>
-                  <strong>Intake & classification</strong>
-                  <div class="muted">Requests routed with the right data and policy checks.</div>
-                </div>
-              </div>
-              <div class="stackRow">
-                <div class="stackIcon">2</div>
-                <div>
-                  <strong>Approvals & exceptions</strong>
-                  <div class="muted">DOA-based approvals, smart escalations, fewer bottlenecks.</div>
-                </div>
-              </div>
-              <div class="stackRow">
-                <div class="stackIcon">3</div>
-                <div>
-                  <strong>Supplier collaboration</strong>
-                  <div class="muted">Onboarding, documents, invoices, and status in one place.</div>
-                </div>
-              </div>
-              <div class="stackRow">
-                <div class="stackIcon">4</div>
-                <div>
-                  <strong>Evidence & reporting</strong>
-                  <div class="muted">Audit trail generated automatically—no manual compilation.</div>
-                </div>
-              </div>
+        <div class="card" style="padding:18px;">
+          <div class="heroGrid" style="grid-template-columns:1fr 1fr; gap:12px;">
+            <div>
+              <ul>
+                <li><strong>Intake:</strong> structured requests with the right data upfront.</li>
+                <li><strong>Approvals:</strong> DOA-based routing with clear accountability.</li>
+                <li><strong>Collaboration:</strong> shared status for stakeholders and suppliers.</li>
+                <li><strong>Evidence:</strong> automated audit trail and reporting.</li>
+              </ul>
             </div>
-          </div>
 
-          <div class="imgFrame" aria-label="Team collaboration image">
-            <img
-              src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 924317.png"
-              alt="Team collaboration in modern office"
-            />
-            <div class="imgFrame__fade" aria-hidden="true"></div>
-            <div class="imgFrame__tag">
-              Automation is a change program — we drive adoption, not just configuration.
+            <div class="imgCard" style="min-height:260px; box-shadow:none;">
+              <img src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 924317.png" alt="Team collaboration in office" />
+              <div class="imgFade" aria-hidden="true"></div>
+              <div class="imgCap">Automation includes adoption and training.</div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- OUTCOMES -->
-    <section class="section" id="outcomes">
-      <div class="container">
-        <div class="head">
-          <h2>Outcomes that stakeholders recognize</h2>
-          <p>
-            Clear value for Finance, Operations, Compliance, and end users—measured in cycle time, quality, and control.
-          </p>
-        </div>
-
-        <div class="grid3">
-          <article class="stat">
-            <div class="stat__num">Less manual work</div>
-            <div class="stat__txt">Automate routing, templates, and evidence capture.</div>
-          </article>
-          <article class="stat">
-            <div class="stat__num">Fewer exceptions</div>
-            <div class="stat__txt">Policy checks and approvals embedded into the workflow.</div>
-          </article>
-          <article class="stat">
-            <div class="stat__num">Audit-ready traceability</div>
-            <div class="stat__txt">Standard evidence and reporting across transactions.</div>
-          </article>
-        </div>
-
-        <div class="quote">
-          <div class="quote__bar" aria-hidden="true"></div>
-          <div class="quote__text">
-            “Automation only works when the operating model is clear. We align the process, controls, and user journey first—then digitize.”
-          </div>
-          <div class="quote__who">NuWayMind delivery principle</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW WE WORK -->
-    <section class="section section--tint" id="work">
-      <div class="container">
-        <div class="head">
-          <h2>How we work</h2>
-          <p>
-            A structured engagement model designed to deliver value early and stabilize quickly.
-          </p>
-        </div>
-
-        <div class="grid4">
-          <div class="step">
-            <div class="step__top">
-              <span class="step__n">01</span>
-              <span class="step__t">Discover</span>
-            </div>
-            <p>Current-state mapping, stakeholders, controls, baseline KPIs.</p>
-          </div>
-
-          <div class="step">
-            <div class="step__top">
-              <span class="step__n">02</span>
-              <span class="step__t">Design</span>
-            </div>
-            <p>TOM, DOA/RACI, SOP set, control points, reporting design.</p>
-          </div>
-
-          <div class="step">
-            <div class="step__top">
-              <span class="step__n">03</span>
-              <span class="step__t">Implement</span>
-            </div>
-            <p>Workflow build, templates, onboarding packs, training, rollout.</p>
-          </div>
-
-          <div class="step">
-            <div class="step__top">
-              <span class="step__n">04</span>
-              <span class="step__t">Stabilize</span>
-            </div>
-            <p>Exception review, KPI cadence, adoption support, CI roadmap.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="cta" id="contact">
+    <section id="contact">
       <div class="container">
-        <div class="ctaBox">
-          <div class="ctaBox__copy">
-            <h2>Let’s define your first automation win.</h2>
-            <p>
-              Tell us what you want to improve (approvals, onboarding, sourcing, invoicing, compliance evidence).
-              We will propose a pragmatic first step with measurable outcomes.
-            </p>
+        <div class="head">
+          <h2>Contact</h2>
+          <p>Send your priority and we will propose a pragmatic first step.</p>
+        </div>
 
+        <div class="contactBox">
+          <div>
             <form class="form" onsubmit="return false;">
-              <div class="form__row">
-                <label class="field">
-                  <span>Name</span>
-                  <input type="text" placeholder="Your name" class="inp" />
+              <div class="row">
+                <label>
+                  Name
+                  <input type="text" placeholder="Your name" />
                 </label>
-                <label class="field">
-                  <span>Email</span>
-                  <input type="email" placeholder="name@company.com" class="inp" />
+                <label>
+                  Email
+                  <input type="email" placeholder="name@company.com" />
                 </label>
               </div>
 
-              <label class="field">
-                <span>What would you like to automate?</span>
-                <textarea rows="4" class="inp inp--area" placeholder="Example: redesign approval matrix, implement supplier onboarding workflow, reduce PO after the fact..."></textarea>
+              <label>
+                What would you like to automate?
+                <textarea placeholder="Example: approval matrix redesign, supplier onboarding workflow, reduce exceptions..."></textarea>
               </label>
 
-              <div class="form__actions">
-                <a class="btn btn--primary" href="mailto:info@nuwaymind.com?subject=NuWayMind%20-%20Automation%20Inquiry">Email NuWayMind</a>
-                <a class="btn btn--ghost" href="#top">Back to top</a>
+              <div class="ctaRow" style="margin:0;">
+                <a class="btn btnPrimary" href="mailto:info@nuwaymind.com?subject=NuWayMind%20-%20Automation%20Inquiry">Email NuWayMind</a>
+                <a class="btn btnGhost" href="#top">Back to top</a>
               </div>
             </form>
           </div>
 
-          <aside class="ctaBox__side">
-            <div class="sideCard">
-              <div class="sideTitle">Common starting points</div>
-              <ul class="list">
-                <li>2–3 week operating model & control assessment</li>
-                <li>Supplier onboarding pack + workflow blueprint</li>
-                <li>Approval matrix redesign and automation</li>
-                <li>Invoice exception reduction playbook</li>
-              </ul>
-
-              <div class="sideHr"></div>
-
-              <div class="sideTitle">Contact</div>
-              <div class="sideText">
-                <a href="mailto:info@nuwaymind.com">info@nuwaymind.com</a><br />
-                © <span id="year"></span> NuWayMind
-              </div>
-            </div>
+          <aside class="side">
+            <strong>Starting points</strong>
+            <ul style="margin:0; padding-left:18px;">
+              <li>Operating model and control assessment</li>
+              <li>Approval matrix redesign and automation</li>
+              <li>Supplier onboarding workflow blueprint</li>
+              <li>Exception reduction playbook</li>
+            </ul>
+            <div class="hr"></div>
+            <p><strong>Email</strong><br /><a href="mailto:info@nuwaymind.com">info@nuwaymind.com</a></p>
           </aside>
         </div>
       </div>
     </section>
 
-    <footer class="ftr">
-      <div class="container ftr__inner">
-        <div class="ftr__left">
-          <div class="ftr__name">NuWayMind</div>
-          <div class="ftr__muted">Arts of Applied Experience</div>
+    <footer>
+      <div class="container ftr">
+        <div>
+          <div style="font-weight:950; color:var(--accent2);">NuWayMind</div>
+          <div>Arts of Applied Experience</div>
         </div>
-        <div class="ftr__right">
-          <a href="#capabilities">Capabilities</a>
-          <a href="#platform">Automation</a>
-          <a href="#work">How we work</a>
-          <a href="#contact">Contact</a>
+        <div>
+          <a href="#capabilities">Capabilities</a> •
+          <a href="#automation">Automation</a> •
+          <a href="#contact">Contact</a> •
+          <span>© <span id="y"></span></span>
         </div>
       </div>
     </footer>
   </main>
 
-  <script src="./script.js"></script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
