@@ -1,723 +1,771 @@
-`<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="NuWayMind – operational excellence, procurement transformation, and compliant automation for pharma and healthcare." />
-  <title>Welcome | NuWayMind</title>
+  <meta name="description" content="NuWayMind – operations, procurement, compliance and automation for regulated environments." />
+  <title>NuWayMind | Welcome</title>
 
   <style>
     :root{
-      --bg: #f6f8fb;
-      --surface: #ffffff;
-      --surface-2: #fbfcfe;
-      --border: #e6eaf0;
-      --text: #1f2a37;
-      --muted: #445266;
-      --subtle: #6b778c;
+      /* Background + container */
+      --bg:#f5f8fb;
+      --wrap:#ffffff;
 
-      /* Brand accents (light theme, conservative) */
-      --accent: #38cee7;       /* Sky Cyan */
-      --accent-2: #e8f9fc;     /* very light cyan tint */
-      --accent-ink: #0b6b78;   /* deep cyan ink for contrast */
-      --grey-80: #4e5963;      /* Cool Grey 80 */
+      /* Surfaces + borders */
+      --surface:#ffffff;
+      --surface-2:#fbfdff;
+      --border:#e3eaf2;
 
-      --radius: 16px;
-      --shadow: 0 10px 28px rgba(17, 24, 39, 0.08);
-      --max: 1160px;
+      /* Text */
+      --text:#132033;
+      --muted:#3f5166;
+      --subtle:#6b7b91;
+
+      /* Brand accents */
+      --accent:#38cee7;
+      --accent-2:#e8f9fc;
+      --accent-ink:#0b6b78;
+      --grey-80:#4e5963;
+
+      /* Layout */
+      --radius:18px;
+      --shadow:0 12px 34px rgba(17,24,39,.08);
+      --shadow-2:0 20px 60px rgba(17,24,39,.10);
+      --max:1180px;
+
+      /* +2px baseline typography */
+      --fs-12:14px;
+      --fs-13:15px;
+      --fs-14:16px;
+      --fs-15:17px;
+      --fs-16:18px;
+      --fs-18:20px;
+      --fs-20:22px;
     }
 
-    *{ box-sizing: border-box; }
+    *{ box-sizing:border-box; }
     html,body{ height:100%; }
     body{
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color: var(--text);
-      background:
-        radial-gradient(900px 600px at 8% 6%, rgba(56,206,231,.18), transparent 60%),
-        radial-gradient(780px 520px at 90% 12%, rgba(78,89,99,.10), transparent 60%),
-        radial-gradient(900px 520px at 60% 92%, rgba(56,206,231,.10), transparent 60%),
-        var(--bg);
-      line-height: 1.5;
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      line-height:1.6;
+      background: var(--bg);
     }
 
-    a{ color: var(--accent-ink); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    a{ color:var(--accent-ink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 22px 18px 60px; }
+    /* WRAP is now white only */
+    .wrap{
+      max-width:var(--max);
+      margin: 18px auto 64px;
+      padding: 22px 18px 72px;
+      background: var(--wrap);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
 
     /* Header */
     header{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 18px;
-      padding: 10px 4px 18px;
+      gap:18px;
+      padding:10px 4px 16px;
     }
     .brand{
       display:flex;
       align-items:center;
-      gap: 12px;
-      min-width: 260px;
+      gap:12px;
+      min-width:260px;
     }
-    .brand img{
-      width: 54px;
-      height: auto;
+    .brand img{ width:62px; height:auto; display:block; }
+    .brand .txt strong{
       display:block;
+      font-size:var(--fs-16);
+      letter-spacing:.2px;
     }
-    .brand-title{
-      display:flex;
-      flex-direction:column;
-      gap: 2px;
-    }
-    .brand-title strong{
-      font-size: 16px;
-      letter-spacing: .2px;
-    }
-    .brand-title span{
-      font-size: 12px;
-      color: var(--subtle);
+    .brand .txt span{
+      display:block;
+      font-size:var(--fs-12);
+      color:var(--subtle);
     }
 
     nav{
       display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap:10px;
+      flex-wrap:wrap;
       justify-content:flex-end;
     }
     nav a{
-      font-size: 13px;
-      color: var(--muted);
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      background: transparent;
+      font-size:var(--fs-13);
+      color:var(--muted);
+      padding:9px 11px;
+      border-radius:12px;
+      border:1px solid transparent;
+      background:transparent;
     }
     nav a:hover{
-      background: rgba(255,255,255,.75);
-      border-color: var(--border);
       text-decoration:none;
+      background: rgba(56,206,231,.10);
+      border-color: rgba(56,206,231,.25);
       color: var(--text);
     }
 
-    /* Cards & sections */
+    /* Cards */
     .card{
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: 0 8px 24px rgba(17,24,39,.06);
     }
 
+    /* Hero */
     .hero{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
-      gap: 16px;
-      align-items: stretch;
-      margin-top: 6px;
+      gap:16px;
+      align-items:stretch;
+      margin-top:8px;
     }
-
     .hero-main{
-      padding: 30px 28px;
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(56,206,231,.12), rgba(255,255,255,0) 55%),
-        var(--surface);
+      padding:36px 32px;
+      background: var(--surface);
+      box-shadow: var(--shadow-2);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-main:after{
+      content:"";
+      position:absolute;
+      inset:-170px -190px auto auto;
+      width:440px; height:440px;
+      border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(56,206,231,.16), transparent 60%);
+      pointer-events:none;
     }
 
-    .kicker{
+    .badge{
       display:inline-flex;
-      gap: 10px;
+      gap:10px;
       align-items:center;
-      font-size: 12px;
-      color: var(--muted);
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: var(--accent-2);
-      border: 1px solid rgba(56,206,231,.30);
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--accent-2);
+      border:1px solid rgba(56,206,231,.32);
+      color:var(--muted);
+      font-size:var(--fs-12);
+      letter-spacing:.15px;
+      position:relative;
+      z-index:1;
+      width: fit-content;
     }
     .dot{
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(56,206,231,.18);
+      width:8px; height:8px; border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 0 6px rgba(56,206,231,.16);
     }
 
-    .hero h1{
-      margin: 14px 0 8px;
-      font-size: clamp(30px, 3.1vw, 44px);
-      line-height: 1.08;
-      letter-spacing: -0.5px;
+    h1{
+      margin:16px 0 10px;
+      font-size: clamp(36px, 3.3vw, 50px);
+      line-height:1.06;
+      letter-spacing:-.7px;
+      position:relative;
+      z-index:1;
     }
-    .hero p.lead{
-      margin: 0;
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 78ch;
+    .lead{
+      margin:0;
+      font-size:var(--fs-16);
+      color:var(--muted);
+      max-width:86ch;
+      position:relative;
+      z-index:1;
+    }
+    .support{
+      margin:12px 0 0;
+      font-size:var(--fs-14);
+      color:var(--muted);
+      max-width:100ch;
+      position:relative;
+      z-index:1;
     }
 
     .cta-row{
       display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 18px;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:20px;
+      position:relative;
+      z-index:1;
     }
-
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap: 10px;
-      padding: 11px 14px;
-      border-radius: 14px;
-      font-size: 14px;
-      font-weight: 650;
-      border: 1px solid var(--border);
-      background: #fff;
-      color: var(--text);
+      gap:10px;
+      padding:13px 18px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+      font-size:var(--fs-14);
+      color:var(--text);
+      box-shadow:0 8px 18px rgba(17,24,39,.06);
       transition: transform .08s ease, box-shadow .12s ease, border-color .12s ease;
-      min-width: 170px;
-      box-shadow: 0 6px 16px rgba(17,24,39,.06);
+      min-width: 200px;
     }
     .btn:hover{
       text-decoration:none;
       transform: translateY(-1px);
-      border-color: rgba(56,206,231,.40);
-      box-shadow: 0 10px 22px rgba(17,24,39,.10);
+      box-shadow:0 14px 26px rgba(17,24,39,.10);
+      border-color: rgba(56,206,231,.55);
     }
     .btn.primary{
-      background: linear-gradient(135deg, rgba(56,206,231,.28), rgba(56,206,231,.10));
-      border-color: rgba(56,206,231,.45);
+      background: linear-gradient(135deg, rgba(56,206,231,.34), rgba(56,206,231,.10));
+      border-color: rgba(56,206,231,.60);
       color: var(--accent-ink);
     }
     .btn.secondary{
-      background: #fff;
-      border-color: var(--border);
-      color: var(--text);
+      background:#fff;
+      border-color:var(--border);
+      color:var(--text);
     }
 
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+      position:relative;
+      z-index:1;
+    }
+    .tag{
+      font-size:var(--fs-12);
+      color:var(--grey-80);
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+    }
+
+    /* Side card */
     .hero-side{
-      padding: 18px 18px;
+      padding:18px 18px;
       background: var(--surface-2);
     }
     .side-title{
-      margin: 0 0 10px;
-      font-size: 13px;
-      font-weight: 750;
-      letter-spacing: .2px;
-      color: var(--grey-80);
+      margin:0 0 10px;
+      font-size:var(--fs-13);
+      font-weight:900;
+      color:var(--grey-80);
+      letter-spacing:.2px;
     }
-
-    .mini-logo{
+    .microbrand{
       display:flex;
       align-items:center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: #fff;
-      margin-bottom: 10px;
+      gap:10px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#fff;
+      margin-bottom:10px;
     }
-    .mini-logo img{ width: 34px; height:auto; display:block; }
-    .mini-logo div{ display:flex; flex-direction:column; gap: 1px; }
-    .mini-logo strong{ font-size: 13px; }
-    .mini-logo span{ font-size: 12px; color: var(--subtle); }
+    .microbrand img{ width:40px; height:auto; display:block; }
+    .microbrand strong{ display:block; font-size:var(--fs-13); }
+    .microbrand span{ display:block; font-size:var(--fs-12); color:var(--subtle); }
 
-    .metric{
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: #fff;
-      margin-bottom: 10px;
+    .bullet{
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#fff;
+      margin-bottom:10px;
     }
-    .metric h3{
-      margin: 0 0 6px;
-      font-size: 13px;
-      letter-spacing: .2px;
+    .bullet h3{
+      margin:0 0 8px;
+      font-size:var(--fs-13);
+      letter-spacing:.15px;
+      color:var(--text);
     }
-    .metric p{
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
+    .checklist{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:8px;
     }
-    .pill-row{
+    .checklist li{
       display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
+      gap:10px;
+      align-items:flex-start;
+      font-size:var(--fs-13);
+      color:var(--muted);
     }
-    .pill{
-      font-size: 12px;
-      color: var(--grey-80);
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fff;
+    .tick{
+      width:18px;height:18px;border-radius:6px;
+      border:1px solid rgba(56,206,231,.45);
+      background:var(--accent-2);
+      margin-top:2px;
+      position:relative;
+      flex:0 0 auto;
+    }
+    .tick:after{
+      content:"";
+      position:absolute;
+      left:5px; top:3px;
+      width:6px; height:10px;
+      border-right:2px solid var(--accent-ink);
+      border-bottom:2px solid var(--accent-ink);
+      transform:rotate(40deg);
     }
 
-    /* Section blocks */
-    .section{
-      margin-top: 16px;
-      padding: 20px 20px;
-    }
+    /* Sections */
+    .section{ margin-top:16px; padding:24px 22px; }
     .section h2{
-      margin: 0 0 8px;
-      font-size: 18px;
-      letter-spacing: .2px;
+      margin:0 0 8px;
+      font-size:var(--fs-20);
+      letter-spacing:.2px;
     }
     .section p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      max-width: 95ch;
+      margin:0;
+      font-size:var(--fs-14);
+      color:var(--muted);
+      max-width: 110ch;
     }
 
-    /* Capability grid */
-    .grid{
-      margin-top: 14px;
+    /* Value grid */
+    .grid-3{
+      margin-top:14px;
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap:12px;
     }
-    .feature{
-      padding: 16px 16px;
-      border-radius: var(--radius);
-      background: #fff;
-      border: 1px solid var(--border);
+    .tile{
+      padding:16px 16px;
+      border-radius:var(--radius);
+      background:#fff;
+      border:1px solid var(--border);
     }
-    .feature .icon{
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      display:grid;
-      place-items:center;
-      font-weight: 800;
-      font-size: 12px;
-      letter-spacing: .3px;
-      color: var(--accent-ink);
-      background: var(--accent-2);
-      border: 1px solid rgba(56,206,231,.35);
-      margin-bottom: 10px;
+    .tile .icon{
+      width:44px;height:44px;border-radius:16px;
+      display:grid;place-items:center;
+      font-weight:900;
+      font-size:var(--fs-12);
+      color:var(--accent-ink);
+      background:var(--accent-2);
+      border:1px solid rgba(56,206,231,.35);
+      margin-bottom:10px;
     }
-    .feature h3{
-      margin: 0 0 6px;
-      font-size: 15px;
-      letter-spacing: .2px;
+    .tile h3{
+      margin:0 0 6px;
+      font-size:var(--fs-15);
+      letter-spacing:.15px;
     }
-    .feature p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
+    .tile p{
+      margin:0;
+      font-size:var(--fs-13);
+      color:var(--muted);
     }
-    .feature ul{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .feature li{ margin: 6px 0; }
 
-    /* Approach timeline */
-    .timeline{
-      margin-top: 14px;
+    /* Services */
+    .caps{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .cap{
+      padding:16px 16px;
+      border-radius:var(--radius);
+      background:#fff;
+      border:1px solid var(--border);
+    }
+    .cap .head{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-bottom:8px;
+    }
+    .cap .pill{
+      font-size:var(--fs-12);
+      color:var(--accent-ink);
+      background:var(--accent-2);
+      border:1px solid rgba(56,206,231,.35);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+    }
+    .cap h3{ margin:0; font-size:var(--fs-15); letter-spacing:.15px; }
+    .cap p{ margin:0; font-size:var(--fs-13); color:var(--muted); }
+    .cap ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      font-size:var(--fs-13);
+      color:var(--muted);
+    }
+    .cap li{ margin:6px 0; }
+
+    /* Approach */
+    .steps{
+      margin-top:14px;
       display:grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      gap:12px;
     }
     .step{
-      padding: 14px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: #fff;
-      position: relative;
-      overflow: hidden;
+      padding:14px 14px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:#fff;
+      position:relative;
+      overflow:hidden;
     }
     .step:before{
       content:"";
       position:absolute;
-      inset: 0 0 auto 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), rgba(56,206,231,0));
+      inset:0 0 auto 0;
+      height:3px;
+      background:linear-gradient(90deg, var(--accent), rgba(56,206,231,0));
     }
     .step .num{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width: 26px;
-      height: 26px;
-      border-radius: 10px;
-      background: var(--accent-2);
-      border: 1px solid rgba(56,206,231,.35);
-      color: var(--accent-ink);
-      font-weight: 800;
-      font-size: 12px;
-      margin-bottom: 8px;
+      width:28px;height:28px;border-radius:10px;
+      display:inline-flex;align-items:center;justify-content:center;
+      background:var(--accent-2);
+      border:1px solid rgba(56,206,231,.35);
+      color:var(--accent-ink);
+      font-weight:900;
+      font-size:var(--fs-12);
+      margin-bottom:8px;
     }
-    .step h3{
-      margin: 0 0 6px;
-      font-size: 14px;
-      letter-spacing: .2px;
-    }
-    .step p{
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-    }
+    .step h3{ margin:0 0 6px; font-size:var(--fs-14); letter-spacing:.15px; }
+    .step p{ margin:0; font-size:var(--fs-13); color:var(--muted); }
 
-    /* Proof points */
-    .proof{
-      margin-top: 14px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+    /* CTA band */
+    .cta-band{
+      margin-top:16px;
+      padding:20px 20px;
+      border-radius:var(--radius);
+      border:1px solid rgba(56,206,231,.36);
+      background: var(--accent-2);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
     }
-    .proof .box{
-      padding: 16px 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: #fff;
+    .cta-band h3{
+      margin:0 0 6px;
+      font-size:var(--fs-18);
+      letter-spacing:.15px;
+      color:var(--grey-80);
     }
-    .proof .box h3{
-      margin: 0 0 6px;
-      font-size: 14px;
-      letter-spacing: .2px;
-      color: var(--grey-80);
-    }
-    .proof .box p{
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
+    .cta-band p{
+      margin:0;
+      font-size:var(--fs-14);
+      color:var(--muted);
+      max-width: 90ch;
     }
 
     /* Contact */
-    .contact-grid{
-      margin-top: 12px;
+    .contact{
+      margin-top:12px;
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap:12px;
     }
     .contact-card{
-      padding: 16px 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: #fff;
+      padding:16px 16px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:#fff;
       display:flex;
-      gap: 12px;
+      gap:12px;
       align-items:flex-start;
     }
-    .contact-card img{
-      width: 38px;
-      height:auto;
+    .contact-card img{ width:42px; height:auto; display:block; margin-top:2px; }
+    .contact-card strong{
       display:block;
-      margin-top: 2px;
+      font-size:var(--fs-14);
+      margin-bottom:4px;
     }
-    .contact-card strong{ font-size: 14px; display:block; margin-bottom: 4px; }
-    .contact-card span{ font-size: 13px; color: var(--muted); display:block; }
+    .contact-card span{
+      display:block;
+      font-size:var(--fs-13);
+      color:var(--muted);
+    }
+    .contact-card .note{ color:var(--subtle); }
 
     footer{
-      margin-top: 18px;
-      padding: 14px 6px 0;
-      border-top: 1px solid var(--border);
+      margin-top:18px;
+      padding:14px 6px 0;
+      border-top:1px solid var(--border);
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      flex-wrap: wrap;
-      gap: 10px;
-      color: var(--subtle);
-      font-size: 12px;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+      color:var(--subtle);
+      font-size:var(--fs-12);
     }
-    footer .foot-links{ display:flex; gap: 14px; flex-wrap: wrap; }
-    footer .foot-links a{ color: var(--subtle); }
-    footer .foot-links a:hover{ color: var(--text); text-decoration: underline; }
+    footer .left{ display:flex; align-items:center; gap:10px; }
+    footer img{ width:30px; height:auto; display:block; }
+    footer .links{ display:flex; gap:14px; flex-wrap:wrap; }
+    footer .links a{ color:var(--subtle); }
+    footer .links a:hover{ color:var(--text); text-decoration:underline; }
 
-    /* Responsive */
-    @media (max-width: 1020px){
+    @media (max-width: 1040px){
       .hero{ grid-template-columns: 1fr; }
-      .grid{ grid-template-columns: 1fr; }
-      .timeline{ grid-template-columns: 1fr; }
-      .proof{ grid-template-columns: 1fr; }
-      .contact-grid{ grid-template-columns: 1fr; }
-      header{ align-items:flex-start; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .caps{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr; }
+      .contact{ grid-template-columns: 1fr; }
       nav{ justify-content:flex-start; }
+      header{ align-items:flex-start; }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
     <header>
-      <div class="brand" aria-label="NuWayMind brand">
-<div class="brand-title">
-        <img src="../images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="" width="300" height="72">
-        <span>Arts of Applied Experience • Operations • Procurement • Compliance • Automation</span>
-        </div>
-      </div>
-
-      <nav aria-label="Primary navigation">
-        <a href="#welcome">Welcome</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#approach">Approach</a>
-        <a href="#proof">Outcomes</a>
-        <a href="#contact">Contact</a>
+<nav>
+      <a href="#welcome">Welcome</a>
+      <a href="#value">Value</a>
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
       </nav>
+        <img src="images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" width="300">
     </header>
 
     <main>
-      <section class="hero" id="welcome" aria-label="Welcome">
+      <section class="hero" id="welcome">
         <div class="card hero-main">
-          <div class="kicker"><span class="dot" aria-hidden="true"></span>Welcome to NuWayMind</div>
+          <div class="badge"><span class="dot" aria-hidden="true"></span>Designed for regulated execution</div>
 
-          <h1>Structured change that turns complexity into controlled performance.</h1>
+          <h1>Turn procurement complexity into measurable performance.</h1>
 
           <p class="lead">
-            NuWayMind helps pharmaceutical, healthcare, and med-tech organizations strengthen operational execution
-            by designing fit-for-purpose operating models, transforming procurement into a measurable business function,
-            and implementing compliant automation across Source-to-Contract and Procure-to-Pay.
+            NuWayMind helps pharma, healthcare, and med-tech organizations move faster with control:
+            stronger governance, clearer accountability, and compliant automation across Source-to-Contract and Procure-to-Pay.
           </p>
 
-          <p class="lead" style="margin-top:12px; font-size:14px; color:var(--muted);">
-            Our work focuses on practical governance, clean master data, and evidence-ready processes—so teams can move faster,
-            reduce manual workload, and improve auditability without creating bureaucracy. We deliver with a hands-on mindset:
-            blueprint, enablement, and execution support until outcomes are embedded into daily operations.
+          <p class="support">
+            If your teams face maverick spend, after-the-fact purchasing, supplier onboarding bottlenecks,
+            invoice exceptions, or audit pressure—NuWayMind aligns Procurement, Quality, Finance, Operations, and IT into one
+            execution model built for traceability and adoption.
           </p>
 
-          <div class="cta-row" role="group" aria-label="Calls to action">
-            <a class="btn primary" href="#contact">Start a conversation</a>
-            <a class="btn secondary" href="#capabilities">Explore capabilities</a>
-            <a class="btn secondary" href="#approach">See delivery approach</a>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Book a 30-minute intro</a>
+            <a class="btn secondary" href="#services">Explore services</a>
+            <a class="btn secondary" href="#approach">See how we deliver</a>
           </div>
 
-          <div class="pill-row" aria-label="Key topics">
-            <span class="pill">S2C / S2P</span>
-            <span class="pill">P2P compliance</span>
-            <span class="pill">Supplier onboarding</span>
-            <span class="pill">Risk scoring & controls</span>
-            <span class="pill">Audit trail & evidence</span>
-            <span class="pill">Template & SOP library</span>
+          <div class="tag-row">
+            <span class="tag">S2C / S2P</span>
+            <span class="tag">P2P compliance</span>
+            <span class="tag">Supplier onboarding</span>
+            <span class="tag">DOA / RACI</span>
+            <span class="tag">Audit evidence</span>
+            <span class="tag">Templates & SOPs</span>
           </div>
         </div>
 
-        <aside class="card hero-side" aria-label="Quick overview">
-          <p class="side-title">At a glance</p>
+        <aside class="card hero-side">
+          <p class="side-title">What you can expect</p>
 
-          <div class="mini-logo" aria-label="NuWayMind mini brand block">
-            <img
-              src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png"
-              alt="NuWayMind logo" />
+          <div class="microbrand">
+            <img src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="NuWayMind logo" />
             <div>
-              <strong>NuWayMind</strong>
-              <span>Applied experience, measurable value</span>
+              <strong>Applied experience</strong>
+              <span>Pragmatic change, delivered in real operations</span>
             </div>
           </div>
 
-          <div class="metric">
-            <h3>What we deliver</h3>
-            <p>
-              Clear governance (DOA/RACI), standardized templates, lean process design, and pragmatic tooling—
-              aligned to regulated environments and audit expectations.
-            </p>
-            <div class="pill-row" style="margin-top:10px;">
-              <span class="pill">Governance</span>
-              <span class="pill">Controls</span>
-              <span class="pill">Automation</span>
-            </div>
+          <div class="bullet">
+            <h3>Immediate improvements</h3>
+            <ul class="checklist">
+              <li><span class="tick" aria-hidden="true"></span><span>Clear approval authority and fewer exceptions.</span></li>
+              <li><span class="tick" aria-hidden="true"></span><span>Faster onboarding with risk-based controls.</span></li>
+              <li><span class="tick" aria-hidden="true"></span><span>Better PO compliance and cleaner invoices.</span></li>
+              <li><span class="tick" aria-hidden="true"></span><span>Audit evidence available by design.</span></li>
+            </ul>
           </div>
 
-          <div class="metric">
-            <h3>Where we operate</h3>
-            <p>
-              Procurement, Finance, Quality, Operations, and IT interfaces—covering supplier lifecycle,
-              purchasing controls, and end-to-end evidence management.
-            </p>
-          </div>
-
-          <div class="metric" style="margin-bottom:0;">
-            <h3>Typical engagement format</h3>
-            <p>
-              Short diagnosis → target blueprint → controlled rollout with enablement and KPI tracking.
-              Designed to produce visible impact within weeks, then scale.
-            </p>
+          <div class="bullet" style="margin-bottom:0;">
+            <h3>Built to scale</h3>
+            <ul class="checklist">
+              <li><span class="tick" aria-hidden="true"></span><span>Multi-site consistency (clinics, labs, plants).</span></li>
+              <li><span class="tick" aria-hidden="true"></span><span>Templates and SOP library for adoption.</span></li>
+              <li><span class="tick" aria-hidden="true"></span><span>KPI cadence to keep the model alive.</span></li>
+            </ul>
           </div>
         </aside>
       </section>
 
-      <section class="card section" id="capabilities" aria-label="Capabilities">
-        <h2>Capabilities</h2>
+      <section class="card section" id="value">
+        <h2>Why NuWayMind</h2>
         <p>
-          NuWayMind provides modular, composable services. You can use them independently or combine them into
-          a full transformation program—from strategy through implementation and stabilization.
+          Outcome-driven delivery: simplify where it is safe, strengthen controls where it is required. The result is
+          higher compliance, better commercial performance, and less operational friction.
         </p>
 
-        <div class="grid" role="list" aria-label="Capability cards">
-          <div class="feature" role="listitem">
-            <div class="icon" aria-hidden="true">S2C</div>
-            <h3>Source-to-Contract</h3>
-            <p>Structured sourcing that improves competitiveness while protecting quality and compliance.</p>
+        <div class="grid-3">
+          <div class="tile">
+            <div class="icon" aria-hidden="true">€</div>
+            <h3>Commercial performance</h3>
+            <p>Better sourcing discipline and reduced leakage—supported by defensible decisions and clean data.</p>
+          </div>
+          <div class="tile">
+            <div class="icon" aria-hidden="true">✓</div>
+            <h3>Compliance by design</h3>
+            <p>Traceability and retention embedded across contracts, POs, deliveries, and invoices.</p>
+          </div>
+          <div class="tile">
+            <div class="icon" aria-hidden="true">⚙</div>
+            <h3>Operational efficiency</h3>
+            <p>Templates, clear roles, and pragmatic automation reduce manual work and recurring bottlenecks.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" id="services">
+        <h2>Services</h2>
+        <p>
+          Modular services that can be delivered independently or combined into a full program. Each module includes governance,
+          templates, enablement, and measurable KPIs.
+        </p>
+
+        <div class="caps">
+          <div class="cap">
+            <div class="head">
+              <span class="pill">S2C</span>
+              <h3>Source-to-Contract</h3>
+            </div>
+            <p>Structured sourcing events and contracting discipline without losing speed.</p>
             <ul>
-              <li>Supplier market analysis, segmentation, and sourcing strategy</li>
-              <li>RFI/RFP templates, scoring models, and evaluation governance</li>
-              <li>Negotiation playbooks and award rationale documentation</li>
-              <li>Contracting governance and evidence retention standards</li>
+              <li>RFI/RFP packs, scoring frameworks, award rationale</li>
+              <li>Negotiation playbooks and supplier segmentation</li>
+              <li>Contract governance and evidence model</li>
+              <li>Supplier performance routines and cadence</li>
             </ul>
           </div>
 
-          <div class="feature" role="listitem">
-            <div class="icon" aria-hidden="true">P2P</div>
-            <h3>Procure-to-Pay</h3>
-            <p>Operational controls that reduce leakage, prevent after-the-fact buying, and increase speed.</p>
+          <div class="cap">
+            <div class="head">
+              <span class="pill">P2P</span>
+              <h3>Procure-to-Pay</h3>
+            </div>
+            <p>Prevent “after-the-fact” buying and reduce invoice exceptions through stronger controls.</p>
             <ul>
-              <li>Requisition & approval design (DOA), including exceptions</li>
-              <li>PO compliance, confirmations, deliveries, and GR/IR discipline</li>
-              <li>Invoice rules (PO number, tax/VAT checks, 3-way match)</li>
+              <li>DOA/RACI design, approval workflows, exceptions</li>
+              <li>PO compliance: confirmations, deliveries, GR/IR discipline</li>
+              <li>Invoice rule-set: VAT checks, 2/3-way match, exceptions</li>
               <li>Supplier portal enablement and communication standards</li>
             </ul>
           </div>
 
-          <div class="feature" role="listitem">
-            <div class="icon" aria-hidden="true">QMS</div>
-            <h3>Compliance & QMS alignment</h3>
-            <p>Controls and documentation designed for regulated environments and audit readiness.</p>
+          <div class="cap">
+            <div class="head">
+              <span class="pill">QMS</span>
+              <h3>Compliance & QMS alignment</h3>
+            </div>
+            <p>Make audit readiness a product of the process—not a last-minute project.</p>
             <ul>
-              <li>Evidence management model (what, where, retention, ownership)</li>
-              <li>SOP templates, work instructions, and controlled document library</li>
+              <li>Controlled documents: SOPs, templates, work instructions</li>
               <li>Supplier onboarding questionnaires and risk classification</li>
-              <li>Audit trail and traceability across contracts, POs, DNs, and invoices</li>
+              <li>Audit trail design across contracts, POs, DNs, invoices</li>
+              <li>Evidence ownership, retention, reporting cadence</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="card section" id="approach" aria-label="Approach">
-        <h2>Delivery approach</h2>
+      <section class="card section" id="approach">
+        <h2>How we deliver</h2>
         <p>
-          We combine rigor with practicality. The goal is not “more process,” but controlled execution with
-          measurable KPIs and clear accountability across functions.
+          Rigor with pragmatism. The goal is adoption and sustained performance—so the model continues to work after go-live.
         </p>
 
-        <div class="timeline" role="list" aria-label="Delivery steps">
-          <div class="step" role="listitem">
+        <div class="steps">
+          <div class="step">
             <div class="num">1</div>
             <h3>Diagnose</h3>
-            <p>
-              Baseline process reality, pain points, and compliance exposure. Map current controls, data,
-              supplier landscape, and key stakeholders.
-            </p>
+            <p>Baseline the current state: processes, controls, data quality, and compliance exposure.</p>
           </div>
-          <div class="step" role="listitem">
+          <div class="step">
             <div class="num">2</div>
-            <h3>Design</h3>
-            <p>
-              Define the target operating model, roles (RACI), approvals (DOA), templates, and control points.
-              Align with Quality, Finance, and IT expectations.
-            </p>
+            <h3>Blueprint</h3>
+            <p>Target operating model: governance, roles, templates, controls, KPIs, and rollout plan.</p>
           </div>
-          <div class="step" role="listitem">
+          <div class="step">
             <div class="num">3</div>
-            <h3>Implement</h3>
-            <p>
-              Roll out processes and tooling in controlled waves. Prepare SOPs, train users,
-              and stabilize the workflow with governance routines.
-            </p>
+            <h3>Roll out</h3>
+            <p>Controlled implementation: enablement, training, documentation, and stabilization support.</p>
           </div>
-          <div class="step" role="listitem">
+          <div class="step">
             <div class="num">4</div>
-            <h3>Embed & improve</h3>
-            <p>
-              Establish KPIs, cadence, and continuous improvement. Strengthen adoption,
-              reduce exceptions, and harden audit evidence.
-            </p>
+            <h3>Embed</h3>
+            <p>Cadence and improvement: KPI tracking, exception reduction, and control hardening.</p>
+          </div>
+        </div>
+
+        <div class="cta-band" aria-label="Call to action">
+          <div>
+            <h3>Ready to make procurement execution predictable?</h3>
+            <p>Share a short overview of scope and pain points. We will propose a practical diagnosis plan with deliverables and timeline.</p>
+          </div>
+          <div class="cta-row" style="margin:0;">
+            <a class="btn primary" href="#contact">Request a proposal</a>
+            <a class="btn secondary" href="#contact">Book intro call</a>
           </div>
         </div>
       </section>
 
-      <section class="card section" id="proof" aria-label="Outcomes">
-        <h2>Expected outcomes</h2>
-        <p>
-          Outcomes depend on scope and maturity, but the focus remains consistent: measurable value, reduced risk,
-          and improved execution speed. Below are common impact areas.
-        </p>
-
-        <div class="proof" role="list" aria-label="Outcome boxes">
-          <div class="box" role="listitem">
-            <h3>Value & efficiency</h3>
-            <p>
-              Better sourcing outcomes, reduced maverick spend, fewer invoice exceptions, and lower manual workload
-              through standardization and automation.
-            </p>
-          </div>
-          <div class="box" role="listitem">
-            <h3>Governance & compliance</h3>
-            <p>
-              Clear approval authority, traceable decisions, supplier risk classification, and evidence-ready records
-              for audits and internal controls.
-            </p>
-          </div>
-          <div class="box" role="listitem">
-            <h3>Operational control</h3>
-            <p>
-              Predictable procurement cycles, stronger supplier performance discipline, and fewer “urgent” escalations
-              caused by unclear process or missing data.
-            </p>
-          </div>
-          <div class="box" role="listitem">
-            <h3>Adoption & enablement</h3>
-            <p>
-              Practical training, templates that people actually use, and routines that keep the model alive
-              after go-live—without dependency on key individuals.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="card section" id="contact" aria-label="Contact">
+      <section class="card section" id="contact">
         <h2>Contact</h2>
         <p>
-          Replace the placeholders below with your official contact details and links (LinkedIn, intake form, calendar booking, etc.).
-          If you prefer, you can add a short contact form or a “book a 30-minute session” button.
+          Replace placeholders with your official contact details and links (LinkedIn, calendar booking, intake form).
         </p>
 
-        <div class="contact-grid" aria-label="Contact cards">
+        <div class="contact">
           <div class="contact-card">
-            <img
-              src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png"
-              alt="NuWayMind logo" />
+            <img src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="NuWayMind logo" />
             <div>
               <strong>Email</strong>
               <span><a href="mailto:hello@nuwaymind.com">hello@nuwaymind.com</a></span>
-              <span style="color:var(--subtle);">For introductions, proposals, or partnership discussions.</span>
+              <span class="note">For introductions, proposals, partnerships, and implementation discussions.</span>
             </div>
           </div>
 
           <div class="contact-card">
-            <img
-              src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png"
-              alt="NuWayMind logo" />
+            <img src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="NuWayMind logo" />
             <div>
               <strong>LinkedIn</strong>
               <span><a href="#" aria-label="NuWayMind LinkedIn">Company page</a></span>
-              <span style="color:var(--subtle);">Updates, thought leadership, and announcements.</span>
+              <span class="note">Updates, publications, and announcements.</span>
             </div>
           </div>
         </div>
 
         <div class="cta-row" style="margin-top:14px;">
           <a class="btn primary" href="#welcome">Back to top</a>
-          <a class="btn secondary" href="#capabilities">Capabilities</a>
-          <a class="btn secondary" href="#approach">Approach</a>
+          <a class="btn secondary" href="#services">Explore services</a>
+          <a class="btn secondary" href="#approach">Delivery approach</a>
         </div>
       </section>
 
       <footer>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <img
-            src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png"
-            alt="NuWayMind logo"
-            style="width:28px; height:auto; display:block;" />
+        <div class="left">
+          <img src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="NuWayMind logo" />
           <div>© <span id="year"></span> NuWayMind. All rights reserved.</div>
         </div>
-
-        <div class="foot-links">
+        <div class="links">
           <a href="#">Privacy</a>
           <a href="#">Terms</a>
           <a href="#">Imprint</a>
