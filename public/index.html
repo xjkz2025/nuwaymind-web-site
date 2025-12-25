@@ -2,780 +2,399 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="NuWayMind – operations, procurement, compliance and automation for regulated environments." />
-  <title>NuWayMind | Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NuWayMind | Arts of Applied Experience</title>
+  <meta name="description" content="NuWayMind helps healthcare and pharmaceutical organizations simplify procurement, strengthen compliance, and accelerate operational performance through applied expertise." />
 
-  <style>
-    :root{
-      /* Background + container */
-      --bg:#f5f8fb;
-      --wrap:#ffffff;
+  <!-- Satoshi font
+       Option A (recommended): self-host Satoshi files and use @font-face in styles.css
+       Option B (quick start): keep this CDN link (requires internet)
+  -->
+  <link rel="preconnect" href="https://fonts.cdnfonts.com">
+  <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
 
-      /* Surfaces + borders */
-      --surface:#ffffff;
-      --surface-2:#fbfdff;
-      --border:#e3eaf2;
-
-      /* Text */
-      --text:#132033;
-      --muted:#3f5166;
-      --subtle:#6b7b91;
-
-      /* Brand accents */
-      --accent:#38cee7;
-      --accent-2:#e8f9fc;
-      --accent-ink:#0b6b78;
-      --grey-80:#4e5963;
-
-      /* Layout */
-      --radius:18px;
-      --shadow:0 12px 34px rgba(17,24,39,.08);
-      --shadow-2:0 20px 60px rgba(17,24,39,.10);
-      --max:1180px;
-
-      /* +2px baseline typography */
-      --fs-12:14px;
-      --fs-13:15px;
-      --fs-14:16px;
-      --fs-15:17px;
-      --fs-16:18px;
-      --fs-18:20px;
-      --fs-20:22px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
-      line-height:1.6;
-      background: var(--bg);
-    }
-
-    a{ color:var(--accent-ink); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    /* WRAP is now white only */
-    .wrap{
-      max-width:var(--max);
-      margin: 18px auto 64px;
-      padding: 22px 18px 72px;
-      background: var(--wrap);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    /* Header */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      padding:10px 4px 16px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:260px;
-    }
-    .brand img{ width:62px; height:auto; display:block; }
-    .brand .txt strong{
-      display:block;
-      font-size:var(--fs-16);
-      letter-spacing:.2px;
-    }
-    .brand .txt span{
-      display:block;
-      font-size:var(--fs-12);
-      color:var(--subtle);
-    }
-
-    nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    nav a{
-      font-size:var(--fs-13);
-      color:var(--muted);
-      padding:9px 11px;
-      border-radius:12px;
-      border:1px solid transparent;
-      background:transparent;
-    }
-    nav a:hover{
-      text-decoration:none;
-      background: rgba(56,206,231,.10);
-      border-color: rgba(56,206,231,.25);
-      color: var(--text);
-    }
-
-    /* Cards */
-    .card{
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow: 0 8px 24px rgba(17,24,39,.06);
-    }
-
-    /* Hero */
-    .hero{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:16px;
-      align-items:stretch;
-      margin-top:8px;
-    }
-    .hero-main{
-      padding:36px 32px;
-      background: var(--surface);
-      box-shadow: var(--shadow-2);
-      position:relative;
-      overflow:hidden;
-    }
-    .hero-main:after{
-      content:"";
-      position:absolute;
-      inset:-170px -190px auto auto;
-      width:440px; height:440px;
-      border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, rgba(56,206,231,.16), transparent 60%);
-      pointer-events:none;
-    }
-
-    .badge{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
-      background:var(--accent-2);
-      border:1px solid rgba(56,206,231,.32);
-      color:var(--muted);
-      font-size:var(--fs-12);
-      letter-spacing:.15px;
-      position:relative;
-      z-index:1;
-      width: fit-content;
-    }
-    .dot{
-      width:8px; height:8px; border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 0 6px rgba(56,206,231,.16);
-    }
-
-    h1{
-      margin:16px 0 10px;
-      font-size: clamp(36px, 3.3vw, 50px);
-      line-height:1.06;
-      letter-spacing:-.7px;
-      position:relative;
-      z-index:1;
-    }
-    .lead{
-      margin:0;
-      font-size:var(--fs-16);
-      color:var(--muted);
-      max-width:86ch;
-      position:relative;
-      z-index:1;
-    }
-    .support{
-      margin:12px 0 0;
-      font-size:var(--fs-14);
-      color:var(--muted);
-      max-width:100ch;
-      position:relative;
-      z-index:1;
-    }
-
-    .cta-row{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:20px;
-      position:relative;
-      z-index:1;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:13px 18px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-weight:800;
-      font-size:var(--fs-14);
-      color:var(--text);
-      box-shadow:0 8px 18px rgba(17,24,39,.06);
-      transition: transform .08s ease, box-shadow .12s ease, border-color .12s ease;
-      min-width: 200px;
-    }
-    .btn:hover{
-      text-decoration:none;
-      transform: translateY(-1px);
-      box-shadow:0 14px 26px rgba(17,24,39,.10);
-      border-color: rgba(56,206,231,.55);
-    }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(56,206,231,.34), rgba(56,206,231,.10));
-      border-color: rgba(56,206,231,.60);
-      color: var(--accent-ink);
-    }
-    .btn.secondary{
-      background:#fff;
-      border-color:var(--border);
-      color:var(--text);
-    }
-
-    .tag-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-      position:relative;
-      z-index:1;
-    }
-    .tag{
-      font-size:var(--fs-12);
-      color:var(--grey-80);
-      padding:7px 12px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:#fff;
-    }
-
-    /* Side card */
-    .hero-side{
-      padding:18px 18px;
-      background: var(--surface-2);
-    }
-    .side-title{
-      margin:0 0 10px;
-      font-size:var(--fs-13);
-      font-weight:900;
-      color:var(--grey-80);
-      letter-spacing:.2px;
-    }
-    .microbrand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:#fff;
-      margin-bottom:10px;
-    }
-    .microbrand img{ width:40px; height:auto; display:block; }
-    .microbrand strong{ display:block; font-size:var(--fs-13); }
-    .microbrand span{ display:block; font-size:var(--fs-12); color:var(--subtle); }
-
-    .bullet{
-      padding:14px 14px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:#fff;
-      margin-bottom:10px;
-    }
-    .bullet h3{
-      margin:0 0 8px;
-      font-size:var(--fs-13);
-      letter-spacing:.15px;
-      color:var(--text);
-    }
-    .checklist{
-      list-style:none;
-      margin:0;
-      padding:0;
-      display:grid;
-      gap:8px;
-    }
-    .checklist li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      font-size:var(--fs-13);
-      color:var(--muted);
-    }
-    .tick{
-      width:18px;height:18px;border-radius:6px;
-      border:1px solid rgba(56,206,231,.45);
-      background:var(--accent-2);
-      margin-top:2px;
-      position:relative;
-      flex:0 0 auto;
-    }
-    .tick:after{
-      content:"";
-      position:absolute;
-      left:5px; top:3px;
-      width:6px; height:10px;
-      border-right:2px solid var(--accent-ink);
-      border-bottom:2px solid var(--accent-ink);
-      transform:rotate(40deg);
-    }
-
-    /* Sections */
-    .section{ margin-top:16px; padding:24px 22px; }
-    .section h2{
-      margin:0 0 8px;
-      font-size:var(--fs-20);
-      letter-spacing:.2px;
-    }
-    .section p{
-      margin:0;
-      font-size:var(--fs-14);
-      color:var(--muted);
-      max-width: 110ch;
-    }
-
-    /* Value grid */
-    .grid-3{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
-    .tile{
-      padding:16px 16px;
-      border-radius:var(--radius);
-      background:#fff;
-      border:1px solid var(--border);
-    }
-    .tile .icon{
-      width:44px;height:44px;border-radius:16px;
-      display:grid;place-items:center;
-      font-weight:900;
-      font-size:var(--fs-12);
-      color:var(--accent-ink);
-      background:var(--accent-2);
-      border:1px solid rgba(56,206,231,.35);
-      margin-bottom:10px;
-    }
-    .tile h3{
-      margin:0 0 6px;
-      font-size:var(--fs-15);
-      letter-spacing:.15px;
-    }
-    .tile p{
-      margin:0;
-      font-size:var(--fs-13);
-      color:var(--muted);
-    }
-
-    /* Services */
-    .caps{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
-    .cap{
-      padding:16px 16px;
-      border-radius:var(--radius);
-      background:#fff;
-      border:1px solid var(--border);
-    }
-    .cap .head{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      margin-bottom:8px;
-    }
-    .cap .pill{
-      font-size:var(--fs-12);
-      color:var(--accent-ink);
-      background:var(--accent-2);
-      border:1px solid rgba(56,206,231,.35);
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:900;
-    }
-    .cap h3{ margin:0; font-size:var(--fs-15); letter-spacing:.15px; }
-    .cap p{ margin:0; font-size:var(--fs-13); color:var(--muted); }
-    .cap ul{
-      margin:10px 0 0;
-      padding-left:18px;
-      font-size:var(--fs-13);
-      color:var(--muted);
-    }
-    .cap li{ margin:6px 0; }
-
-    /* Approach */
-    .steps{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:12px;
-    }
-    .step{
-      padding:14px 14px;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      background:#fff;
-      position:relative;
-      overflow:hidden;
-    }
-    .step:before{
-      content:"";
-      position:absolute;
-      inset:0 0 auto 0;
-      height:3px;
-      background:linear-gradient(90deg, var(--accent), rgba(56,206,231,0));
-    }
-    .step .num{
-      width:28px;height:28px;border-radius:10px;
-      display:inline-flex;align-items:center;justify-content:center;
-      background:var(--accent-2);
-      border:1px solid rgba(56,206,231,.35);
-      color:var(--accent-ink);
-      font-weight:900;
-      font-size:var(--fs-12);
-      margin-bottom:8px;
-    }
-    .step h3{ margin:0 0 6px; font-size:var(--fs-14); letter-spacing:.15px; }
-    .step p{ margin:0; font-size:var(--fs-13); color:var(--muted); }
-
-    /* CTA band */
-    .cta-band{
-      margin-top:16px;
-      padding:20px 20px;
-      border-radius:var(--radius);
-      border:1px solid rgba(56,206,231,.36);
-      background: var(--accent-2);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-    .cta-band h3{
-      margin:0 0 6px;
-      font-size:var(--fs-18);
-      letter-spacing:.15px;
-      color:var(--grey-80);
-    }
-    .cta-band p{
-      margin:0;
-      font-size:var(--fs-14);
-      color:var(--muted);
-      max-width: 90ch;
-    }
-
-    /* Contact */
-    .contact{
-      margin-top:12px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    .contact-card{
-      padding:16px 16px;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      background:#fff;
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    }
-    .contact-card img{ width:42px; height:auto; display:block; margin-top:2px; }
-    .contact-card strong{
-      display:block;
-      font-size:var(--fs-14);
-      margin-bottom:4px;
-    }
-    .contact-card span{
-      display:block;
-      font-size:var(--fs-13);
-      color:var(--muted);
-    }
-    .contact-card .note{ color:var(--subtle); }
-
-    footer{
-      margin-top:18px;
-      padding:14px 6px 0;
-      border-top:1px solid var(--border);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:10px;
-      color:var(--subtle);
-      font-size:var(--fs-12);
-    }
-    footer .left{ display:flex; align-items:center; gap:10px; }
-    footer img{ width:30px; height:auto; display:block; }
-    footer .links{ display:flex; gap:14px; flex-wrap:wrap; }
-    footer .links a{ color:var(--subtle); }
-    footer .links a:hover{ color:var(--text); text-decoration:underline; }
-
-    @media (max-width: 1040px){
-      .hero{ grid-template-columns: 1fr; }
-      .grid-3{ grid-template-columns: 1fr; }
-      .caps{ grid-template-columns: 1fr; }
-      .steps{ grid-template-columns: 1fr; }
-      .contact{ grid-template-columns: 1fr; }
-      nav{ justify-content:flex-start; }
-      header{ align-items:flex-start; }
-    }
-  </style>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-<div class="wrap">
-    <header>
-<nav>
-      <a href="#welcome">Welcome</a>
-      <a href="#value">Value</a>
-      <a href="#services">Services</a>
-      <a href="#approach">Approach</a>
-      <a href="#contact">Contact</a>
-      </nav>
-        <img src="images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" width="300">
-    </header>
-
-    <main>
-      <section class="hero" id="welcome">
-        <div class="card hero-main">
-          <div class="badge"><span class="dot" aria-hidden="true"></span>Designed for regulated execution</div>
-
-          <h1>Turn procurement complexity into measurable performance.</h1>
-
-          <p class="lead">
-            NuWayMind helps pharma, healthcare, and med-tech organizations move faster with control:
-            stronger governance, clearer accountability, and compliant automation across Source-to-Contract and Procure-to-Pay.
-          </p>
-
-          <p class="support">
-            If your teams face maverick spend, after-the-fact purchasing, supplier onboarding bottlenecks,
-            invoice exceptions, or audit pressure—NuWayMind aligns Procurement, Quality, Finance, Operations, and IT into one
-            execution model built for traceability and adoption.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn primary" href="#contact">Book a 30-minute intro</a>
-            <a class="btn secondary" href="#services">Explore services</a>
-            <a class="btn secondary" href="#approach">See how we deliver</a>
-          </div>
-
-          <div class="tag-row">
-            <span class="tag">S2C / S2P</span>
-            <span class="tag">P2P compliance</span>
-            <span class="tag">Supplier onboarding</span>
-            <span class="tag">DOA / RACI</span>
-            <span class="tag">Audit evidence</span>
-            <span class="tag">Templates & SOPs</span>
-          </div>
-        </div>
-
-        <aside class="card hero-side">
-          <p class="side-title">What you can expect</p>
-
-          <div class="microbrand">
-            <img src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="NuWayMind logo" />
-            <div>
-              <strong>Applied experience</strong>
-              <span>Pragmatic change, delivered in real operations</span>
-            </div>
-          </div>
-
-          <div class="bullet">
-            <h3>Immediate improvements</h3>
-            <ul class="checklist">
-              <li><span class="tick" aria-hidden="true"></span><span>Clear approval authority and fewer exceptions.</span></li>
-              <li><span class="tick" aria-hidden="true"></span><span>Faster onboarding with risk-based controls.</span></li>
-              <li><span class="tick" aria-hidden="true"></span><span>Better PO compliance and cleaner invoices.</span></li>
-              <li><span class="tick" aria-hidden="true"></span><span>Audit evidence available by design.</span></li>
-            </ul>
-          </div>
-
-          <div class="bullet" style="margin-bottom:0;">
-            <h3>Built to scale</h3>
-            <ul class="checklist">
-              <li><span class="tick" aria-hidden="true"></span><span>Multi-site consistency (clinics, labs, plants).</span></li>
-              <li><span class="tick" aria-hidden="true"></span><span>Templates and SOP library for adoption.</span></li>
-              <li><span class="tick" aria-hidden="true"></span><span>KPI cadence to keep the model alive.</span></li>
-            </ul>
-          </div>
-        </aside>
-      </section>
-
-      <section class="card section" id="value">
-        <h2>Why NuWayMind</h2>
-        <p>
-          Outcome-driven delivery: simplify where it is safe, strengthen controls where it is required. The result is
-          higher compliance, better commercial performance, and less operational friction.
-        </p>
-
-        <div class="grid-3">
-          <div class="tile">
-            <div class="icon" aria-hidden="true">€</div>
-            <h3>Commercial performance</h3>
-            <p>Better sourcing discipline and reduced leakage—supported by defensible decisions and clean data.</p>
-          </div>
-          <div class="tile">
-            <div class="icon" aria-hidden="true">✓</div>
-            <h3>Compliance by design</h3>
-            <p>Traceability and retention embedded across contracts, POs, deliveries, and invoices.</p>
-          </div>
-          <div class="tile">
-            <div class="icon" aria-hidden="true">⚙</div>
-            <h3>Operational efficiency</h3>
-            <p>Templates, clear roles, and pragmatic automation reduce manual work and recurring bottlenecks.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="card section" id="services">
-        <h2>Services</h2>
-        <p>
-          Modular services that can be delivered independently or combined into a full program. Each module includes governance,
-          templates, enablement, and measurable KPIs.
-        </p>
-
-        <div class="caps">
-          <div class="cap">
-            <div class="head">
-              <span class="pill">S2C</span>
-              <h3>Source-to-Contract</h3>
-            </div>
-            <p>Structured sourcing events and contracting discipline without losing speed.</p>
-            <ul>
-              <li>RFI/RFP packs, scoring frameworks, award rationale</li>
-              <li>Negotiation playbooks and supplier segmentation</li>
-              <li>Contract governance and evidence model</li>
-              <li>Supplier performance routines and cadence</li>
-            </ul>
-          </div>
-
-          <div class="cap">
-            <div class="head">
-              <span class="pill">P2P</span>
-              <h3>Procure-to-Pay</h3>
-            </div>
-            <p>Prevent “after-the-fact” buying and reduce invoice exceptions through stronger controls.</p>
-            <ul>
-              <li>DOA/RACI design, approval workflows, exceptions</li>
-              <li>PO compliance: confirmations, deliveries, GR/IR discipline</li>
-              <li>Invoice rule-set: VAT checks, 2/3-way match, exceptions</li>
-              <li>Supplier portal enablement and communication standards</li>
-            </ul>
-          </div>
-
-          <div class="cap">
-            <div class="head">
-              <span class="pill">QMS</span>
-              <h3>Compliance & QMS alignment</h3>
-            </div>
-            <p>Make audit readiness a product of the process—not a last-minute project.</p>
-            <ul>
-              <li>Controlled documents: SOPs, templates, work instructions</li>
-              <li>Supplier onboarding questionnaires and risk classification</li>
-              <li>Audit trail design across contracts, POs, DNs, invoices</li>
-              <li>Evidence ownership, retention, reporting cadence</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="card section" id="approach">
-        <h2>How we deliver</h2>
-        <p>
-          Rigor with pragmatism. The goal is adoption and sustained performance—so the model continues to work after go-live.
-        </p>
-
-        <div class="steps">
-          <div class="step">
-            <div class="num">1</div>
-            <h3>Diagnose</h3>
-            <p>Baseline the current state: processes, controls, data quality, and compliance exposure.</p>
-          </div>
-          <div class="step">
-            <div class="num">2</div>
-            <h3>Blueprint</h3>
-            <p>Target operating model: governance, roles, templates, controls, KPIs, and rollout plan.</p>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <h3>Roll out</h3>
-            <p>Controlled implementation: enablement, training, documentation, and stabilization support.</p>
-          </div>
-          <div class="step">
-            <div class="num">4</div>
-            <h3>Embed</h3>
-            <p>Cadence and improvement: KPI tracking, exception reduction, and control hardening.</p>
-          </div>
-        </div>
-
-        <div class="cta-band" aria-label="Call to action">
-          <div>
-            <h3>Ready to make procurement execution predictable?</h3>
-            <p>Share a short overview of scope and pain points. We will propose a practical diagnosis plan with deliverables and timeline.</p>
-          </div>
-          <div class="cta-row" style="margin:0;">
-            <a class="btn primary" href="#contact">Request a proposal</a>
-            <a class="btn secondary" href="#contact">Book intro call</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="card section" id="contact">
-        <h2>Contact</h2>
-        <p>
-          Replace placeholders with your official contact details and links (LinkedIn, calendar booking, intake form).
-        </p>
-
-        <div class="contact">
-          <div class="contact-card">
-            <img src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="NuWayMind logo" />
-            <div>
-              <strong>Email</strong>
-              <span><a href="mailto:hello@nuwaymind.com">hello@nuwaymind.com</a></span>
-              <span class="note">For introductions, proposals, partnerships, and implementation discussions.</span>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <img src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="NuWayMind logo" />
-            <div>
-              <strong>LinkedIn</strong>
-              <span><a href="#" aria-label="NuWayMind LinkedIn">Company page</a></span>
-              <span class="note">Updates, publications, and announcements.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="cta-row" style="margin-top:14px;">
-          <a class="btn primary" href="#welcome">Back to top</a>
-          <a class="btn secondary" href="#services">Explore services</a>
-          <a class="btn secondary" href="#approach">Delivery approach</a>
-        </div>
-      </section>
-
-      <footer>
-        <div class="left">
-          <img src="https://nuwaymind.com/images/NuWayMind/_Sky_Cyan_-_Cool_Grey_80_Arts_of_Applied_Experience.png" alt="NuWayMind logo" />
-          <div>© <span id="year"></span> NuWayMind. All rights reserved.</div>
-        </div>
-        <div class="links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Imprint</a>
-        </div>
-      </footer>
-    </main>
+  <!-- Top utility bar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__note">Healthcare & Pharma Operations • Procurement • Compliance • Automation</div>
+      <div class="topbar__actions">
+        <a class="topbar__link" href="#contact">Contact</a>
+        <a class="topbar__link" href="#insights">Insights</a>
+      </div>
+    </div>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="NuWayMind home">
+        <img
+          class="brand__logo"
+          src="./NuWayMind Sky Cyan - Cool Grey 80 Arts of Applied Experience.png"
+          alt="NuWayMind logo"
+          width="300"
+        />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="#services">Services</a>
+        <a class="nav__link" href="#solutions">Solutions</a>
+        <a class="nav__link" href="#approach">Approach</a>
+        <a class="nav__link" href="#industries">Industries</a>
+        <a class="nav__link" href="#insights">Insights</a>
+        <a class="btn btn--ghost" href="#contact">Request intro</a>
+        <a class="btn btn--primary" href="#contact">Start a project</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile" id="mobileNav" aria-hidden="true">
+      <div class="container mobile__inner">
+        <a href="#services" class="mobile__link">Services</a>
+        <a href="#solutions" class="mobile__link">Solutions</a>
+        <a href="#approach" class="mobile__link">Approach</a>
+        <a href="#industries" class="mobile__link">Industries</a>
+        <a href="#insights" class="mobile__link">Insights</a>
+        <a href="#contact" class="btn btn--primary mobile__cta">Start a project</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="pill">
+            <span class="pill__dot" aria-hidden="true"></span>
+            Arts of Applied Experience
+          </div>
+
+          <h1 class="hero__title">Make procurement and compliance feel simple.</h1>
+
+          <p class="hero__subtitle">
+            NuWayMind partners with healthcare and pharmaceutical organizations to streamline operating models,
+            digitize workflows, and build audit-ready governance across Source-to-Contract, Procure-to-Pay, and supplier onboarding.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#contact">Book a 30-minute discovery</a>
+            <a class="btn btn--ghost" href="#services">Explore capabilities</a>
+          </div>
+
+          <div class="hero__metrics">
+            <div class="metric">
+              <div class="metric__value">Speed</div>
+              <div class="metric__label">Shorter cycle times, fewer handoffs</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value">Control</div>
+              <div class="metric__label">Traceability, evidence, policy adherence</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value">Value</div>
+              <div class="metric__label">Savings + risk reduction + adoption</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <div class="mediaCard">
+            <img
+              src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 924317.png"
+              alt="Team collaborating in a modern office meeting space"
+            />
+            <div class="mediaCard__overlay" aria-hidden="true"></div>
+            <div class="mediaCard__caption">
+              Practical delivery mindset: align stakeholders, streamline workflows, and scale governance.
+            </div>
+          </div>
+
+          <div class="trust">
+            <div class="trust__title">Built for regulated environments</div>
+            <div class="trust__badges" role="list">
+              <div class="badge" role="listitem">S2C / P2P</div>
+              <div class="badge" role="listitem">Supplier Onboarding</div>
+              <div class="badge" role="listitem">QMS-ready thinking</div>
+              <div class="badge" role="listitem">ESG data collection</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="sectionHead">
+          <h2 class="sectionHead__title">Services</h2>
+          <p class="sectionHead__text">
+            Modular services you can deploy individually or as an end-to-end operating model transformation.
+          </p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <h3 class="card__title">Source-to-Contract (S2C)</h3>
+            <p class="card__text">
+              Category strategy, supplier selection, RFX orchestration, negotiation playbooks, and contract governance—designed for speed and compliance.
+            </p>
+            <div class="tags">
+              <span class="tag">Category Management</span>
+              <span class="tag">RFP / eAuction</span>
+              <span class="tag">CLM Governance</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Procure-to-Pay (P2P)</h3>
+            <p class="card__text">
+              Requisitions, approvals, purchase orders, receipting, invoice controls, and exception handling—reducing manual work while increasing policy adherence.
+            </p>
+            <div class="tags">
+              <span class="tag">DOA / RACI</span>
+              <span class="tag">3-way match</span>
+              <span class="tag">Supplier Portal</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Supplier Onboarding & Risk</h3>
+            <p class="card__text">
+              Onboarding frameworks, ESG/anti-bribery questionnaires, quality requirements, and scoring models to keep suppliers reliable and audit-ready.
+            </p>
+            <div class="tags">
+              <span class="tag">Due diligence</span>
+              <span class="tag">CSRD / CSDDD</span>
+              <span class="tag">Quality Controls</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section class="section section--soft" id="solutions">
+      <div class="container">
+        <div class="sectionHead">
+          <h2 class="sectionHead__title">Solutions</h2>
+          <p class="sectionHead__text">
+            Packaged outcomes for common challenges in procurement and operational governance.
+          </p>
+        </div>
+
+        <div class="grid2">
+          <article class="card card--wide">
+            <h3 class="card__title">Audit-ready procurement operating model</h3>
+            <p class="card__text">
+              Define target processes, controls, SOPs, approval matrices, and evidence points—then embed them into daily workflows and reporting.
+            </p>
+            <ul class="bullets">
+              <li>Policy-to-process mapping</li>
+              <li>Approval flows and delegated authority</li>
+              <li>Templates and evidence library</li>
+              <li>KPI / control monitoring cadence</li>
+            </ul>
+          </article>
+
+          <article class="card card--wide">
+            <h3 class="card__title">Supplier onboarding acceleration</h3>
+            <p class="card__text">
+              Standardize onboarding, reduce cycle time, and improve data quality and compliance coverage across your supplier base.
+            </p>
+            <ul class="bullets">
+              <li>Questionnaire packs (ESG, ABAC, quality)</li>
+              <li>Risk scoring and segmentation</li>
+              <li>Vendor master data baseline</li>
+              <li>Onboarding workflows and SLAs</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="section" id="approach">
+      <div class="container">
+        <div class="sectionHead">
+          <h2 class="sectionHead__title">Approach</h2>
+          <p class="sectionHead__text">
+            Structured engagement model that delivers clarity quickly and converts it into sustainable capability.
+          </p>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3 class="card__title">Delivery model</h3>
+            <ol class="steps">
+              <li><strong>Discover</strong> — current state mapping, stakeholder alignment, baseline metrics.</li>
+              <li><strong>Design</strong> — TOM, SOP set, DOA/RACI, controls and reporting.</li>
+              <li><strong>Implement</strong> — workflows, templates, training, rollout plan.</li>
+              <li><strong>Stabilize</strong> — monitoring, continuous improvement cadence, adoption support.</li>
+            </ol>
+
+            <div class="callout">
+              <div class="callout__title">Focus on adoption</div>
+              <div class="callout__text">We prioritize usability and clarity to drive consistent compliance without slowing the business.</div>
+            </div>
+          </div>
+
+          <div class="mediaCard mediaCard--tall">
+            <img
+              src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 551577.png"
+              alt="Procurement and operations meeting with dashboards"
+            />
+            <div class="mediaCard__overlay" aria-hidden="true"></div>
+            <div class="mediaCard__caption">
+              Clear operating governance: process + controls + tools + people.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section class="section section--soft" id="industries">
+      <div class="container">
+        <div class="sectionHead">
+          <h2 class="sectionHead__title">Industries</h2>
+          <p class="sectionHead__text">
+            NuWayMind is designed for environments where quality, documentation, and supplier performance are business-critical.
+          </p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <h3 class="card__title">Healthcare providers</h3>
+            <p class="card__text">Spend visibility, standardization, and compliance controls for clinical and operational purchasing.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Pharmaceutical & med-tech</h3>
+            <p class="card__text">Supplier qualification, quality requirements, and audit-ready evidence across procurement workflows.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">IVF & fertility clinics</h3>
+            <p class="card__text">Consumables and equipment sourcing, contract governance, and supplier onboarding aligned to quality needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGHTS -->
+    <section class="section" id="insights">
+      <div class="container">
+        <div class="sectionHead">
+          <h2 class="sectionHead__title">Insights</h2>
+          <p class="sectionHead__text">Short, practical topics that frequently drive fast improvements.</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card card--link">
+            <h3 class="card__title">How to stop “PO after the fact”</h3>
+            <p class="card__text">Practical controls, approval design, and adoption tactics that reduce compliance exceptions.</p>
+            <a class="card__cta" href="#contact">Ask for a checklist</a>
+          </article>
+
+          <article class="card card--link">
+            <h3 class="card__title">Vendor onboarding: what to standardize</h3>
+            <p class="card__text">Core master data, ESG/ABAC packs, and minimum evidence needed for audit-ready onboarding.</p>
+            <a class="card__cta" href="#contact">Request templates</a>
+          </article>
+
+          <article class="card card--link">
+            <h3 class="card__title">S2C playbook for regulated categories</h3>
+            <p class="card__text">RFX structure, evaluation criteria, and documentation flow to simplify approvals.</p>
+            <a class="card__cta" href="#contact">Get the framework</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="ctaBox">
+          <div class="ctaBox__copy">
+            <h2 class="ctaBox__title">Ready to accelerate operational performance?</h2>
+            <p class="ctaBox__text">
+              Share your priority (S2C, P2P, supplier onboarding, compliance, or system enablement). We will propose a pragmatic first step with clear outcomes.
+            </p>
+
+            <form class="form" onsubmit="return false;">
+              <div class="form__row">
+                <label class="field">
+                  <span class="field__label">Name</span>
+                  <input class="field__input" type="text" placeholder="Your name" />
+                </label>
+
+                <label class="field">
+                  <span class="field__label">Email</span>
+                  <input class="field__input" type="email" placeholder="name@company.com" />
+                </label>
+              </div>
+
+              <label class="field">
+                <span class="field__label">What do you need help with?</span>
+                <textarea class="field__input field__input--area" rows="4" placeholder="Example: reduce onboarding cycle time, redesign P2P approvals, implement supplier portal..."></textarea>
+              </label>
+
+              <div class="form__actions">
+                <a class="btn btn--primary" href="mailto:info@nuwaymind.com?subject=NuWayMind%20-%20Project%20Inquiry">Email NuWayMind</a>
+                <a class="btn btn--ghost" href="#top">Back to top</a>
+              </div>
+            </form>
+          </div>
+
+          <div class="ctaBox__side">
+            <div class="sideCard">
+              <div class="sideCard__title">Typical first engagements</div>
+              <ul class="bullets">
+                <li>2–3 week process + controls assessment</li>
+                <li>Supplier onboarding pack + workflow</li>
+                <li>P2P approval matrix redesign</li>
+                <li>S2C RFX templates + scorecards</li>
+              </ul>
+
+              <div class="sideCard__divider"></div>
+
+              <div class="sideCard__title">Contact</div>
+              <div class="sideCard__text">
+                Email: <a href="mailto:info@nuwaymind.com">info@nuwaymind.com</a><br />
+                Website: NuWayMind
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <div class="footer__brand">NuWayMind</div>
+          <div class="footer__muted">Arts of Applied Experience</div>
+        </div>
+        <div class="footer__right">
+          <a class="footer__link" href="#services">Services</a>
+          <a class="footer__link" href="#approach">Approach</a>
+          <a class="footer__link" href="#contact">Contact</a>
+          <span class="footer__muted">© <span id="year"></span></span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>
