@@ -3,13 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NuWayMind | Arts of Applied Experience</title>
-  <meta name="description" content="NuWayMind helps healthcare and pharmaceutical organizations simplify procurement, strengthen compliance, and accelerate operational performance through applied expertise." />
+  <title>NuWayMind | Operational Automation & Governance</title>
+  <meta name="description" content="NuWayMind helps organizations automate operational workflows, strengthen governance, and deliver measurable performance across procurement and business operations." />
 
-  <!-- Satoshi font
-       Option A (recommended): self-host Satoshi files and use @font-face in styles.css
-       Option B (quick start): keep this CDN link (requires internet)
-  -->
+  <!-- Satoshi (quick start CDN; self-host if preferred) -->
   <link rel="preconnect" href="https://fonts.cdnfonts.com">
   <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
 
@@ -17,305 +14,328 @@
 </head>
 
 <body>
-  <!-- Top utility bar -->
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <div class="topbar__note">Healthcare & Pharma Operations • Procurement • Compliance • Automation</div>
-      <div class="topbar__actions">
-        <a class="topbar__link" href="#contact">Contact</a>
-        <a class="topbar__link" href="#insights">Insights</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="header" id="top">
-    <div class="container header__inner">
+  <!-- Sticky Header -->
+  <header class="hdr" id="top">
+    <div class="container hdr__inner">
       <a class="brand" href="#top" aria-label="NuWayMind home">
         <img
-          class="brand__logo"
           src="./NuWayMind Sky Cyan - Cool Grey 80 Arts of Applied Experience.png"
           alt="NuWayMind logo"
+          class="brand__logo"
           width="300"
         />
       </a>
 
       <nav class="nav" aria-label="Primary">
-        <a class="nav__link" href="#services">Services</a>
-        <a class="nav__link" href="#solutions">Solutions</a>
-        <a class="nav__link" href="#approach">Approach</a>
-        <a class="nav__link" href="#industries">Industries</a>
-        <a class="nav__link" href="#insights">Insights</a>
-        <a class="btn btn--ghost" href="#contact">Request intro</a>
-        <a class="btn btn--primary" href="#contact">Start a project</a>
+        <a href="#capabilities" class="nav__link">Capabilities</a>
+        <a href="#platform" class="nav__link">Automation</a>
+        <a href="#outcomes" class="nav__link">Outcomes</a>
+        <a href="#work" class="nav__link">How we work</a>
+        <a href="#contact" class="btn btn--ghost">Talk to us</a>
+        <a href="#contact" class="btn btn--primary">Request a proposal</a>
       </nav>
 
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
 
     <!-- Mobile nav -->
-    <div class="mobile" id="mobileNav" aria-hidden="true">
-      <div class="container mobile__inner">
-        <a href="#services" class="mobile__link">Services</a>
-        <a href="#solutions" class="mobile__link">Solutions</a>
-        <a href="#approach" class="mobile__link">Approach</a>
-        <a href="#industries" class="mobile__link">Industries</a>
-        <a href="#insights" class="mobile__link">Insights</a>
-        <a href="#contact" class="btn btn--primary mobile__cta">Start a project</a>
+    <div class="mnav" id="mnav" aria-hidden="true">
+      <div class="container mnav__inner">
+        <a href="#capabilities" class="mnav__link">Capabilities</a>
+        <a href="#platform" class="mnav__link">Automation</a>
+        <a href="#outcomes" class="mnav__link">Outcomes</a>
+        <a href="#work" class="mnav__link">How we work</a>
+        <a href="#contact" class="btn btn--primary mnav__cta">Request a proposal</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO (marketing / automation) -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <div class="pill">
-            <span class="pill__dot" aria-hidden="true"></span>
-            Arts of Applied Experience
+          <div class="badgeLine">
+            <span class="dot" aria-hidden="true"></span>
+            Operational automation • Governance • Measurable outcomes
           </div>
 
-          <h1 class="hero__title">Make procurement and compliance feel simple.</h1>
+          <h1 class="hero__title">
+            Turn complex operations into automated, audit-ready workflows.
+          </h1>
 
-          <p class="hero__subtitle">
-            NuWayMind partners with healthcare and pharmaceutical organizations to streamline operating models,
-            digitize workflows, and build audit-ready governance across Source-to-Contract, Procure-to-Pay, and supplier onboarding.
+          <p class="hero__sub">
+            NuWayMind designs operating models and implements automation that reduces manual effort,
+            shortens cycle times, and improves compliance—without slowing the business.
           </p>
 
           <div class="hero__cta">
-            <a class="btn btn--primary" href="#contact">Book a 30-minute discovery</a>
-            <a class="btn btn--ghost" href="#services">Explore capabilities</a>
+            <a class="btn btn--primary" href="#contact">Book a discovery call</a>
+            <a class="btn btn--ghost" href="#platform">See automation approach</a>
           </div>
 
-          <div class="hero__metrics">
-            <div class="metric">
-              <div class="metric__value">Speed</div>
-              <div class="metric__label">Shorter cycle times, fewer handoffs</div>
+          <div class="hero__proof">
+            <div class="proof">
+              <strong>Workflow clarity</strong>
+              <span>Standardize processes, roles, and controls</span>
             </div>
-            <div class="metric">
-              <div class="metric__value">Control</div>
-              <div class="metric__label">Traceability, evidence, policy adherence</div>
+            <div class="proof">
+              <strong>Automation</strong>
+              <span>Digitize approvals, onboarding, evidence capture</span>
             </div>
-            <div class="metric">
-              <div class="metric__value">Value</div>
-              <div class="metric__label">Savings + risk reduction + adoption</div>
+            <div class="proof">
+              <strong>Governance</strong>
+              <span>Traceability, reporting, and continuous improvement</span>
             </div>
           </div>
         </div>
 
-        <div class="hero__media">
-          <div class="mediaCard">
+        <div class="hero__visual">
+          <div class="visualCard">
             <img
-              src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 924317.png"
-              alt="Team collaborating in a modern office meeting space"
+              src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 551577.png"
+              alt="Modern team meeting with dashboards"
             />
-            <div class="mediaCard__overlay" aria-hidden="true"></div>
-            <div class="mediaCard__caption">
-              Practical delivery mindset: align stakeholders, streamline workflows, and scale governance.
+            <div class="visualCard__fade" aria-hidden="true"></div>
+            <div class="visualCard__panel">
+              <div class="panelTitle">Automation-first operating model</div>
+              <div class="panelText">
+                Reduce friction with smart routing, templates, and evidence-by-design.
+              </div>
             </div>
           </div>
 
-          <div class="trust">
-            <div class="trust__title">Built for regulated environments</div>
-            <div class="trust__badges" role="list">
-              <div class="badge" role="listitem">S2C / P2P</div>
-              <div class="badge" role="listitem">Supplier Onboarding</div>
-              <div class="badge" role="listitem">QMS-ready thinking</div>
-              <div class="badge" role="listitem">ESG data collection</div>
+          <div class="signal">
+            <div class="signal__item">
+              <span class="signal__k">Typical focus</span>
+              <span class="signal__v">Procurement & cross-functional operations</span>
+            </div>
+            <div class="signal__item">
+              <span class="signal__k">Delivery style</span>
+              <span class="signal__v">Pragmatic, modular, outcome-driven</span>
+            </div>
+            <div class="signal__item">
+              <span class="signal__k">Best fit</span>
+              <span class="signal__v">Regulated and performance-critical environments</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section" id="services">
+    <!-- CAPABILITIES -->
+    <section class="section" id="capabilities">
       <div class="container">
-        <div class="sectionHead">
-          <h2 class="sectionHead__title">Services</h2>
-          <p class="sectionHead__text">
-            Modular services you can deploy individually or as an end-to-end operating model transformation.
+        <div class="head">
+          <h2>Capabilities</h2>
+          <p>
+            End-to-end support from operating model design to automation rollout and stabilization.
           </p>
         </div>
 
         <div class="grid3">
           <article class="card">
-            <h3 class="card__title">Source-to-Contract (S2C)</h3>
-            <p class="card__text">
-              Category strategy, supplier selection, RFX orchestration, negotiation playbooks, and contract governance—designed for speed and compliance.
+            <h3>Operating model design</h3>
+            <p>
+              Target operating model, roles (RACI), approval matrix (DOA), SOPs, controls, and KPIs—built for adoption.
             </p>
-            <div class="tags">
-              <span class="tag">Category Management</span>
-              <span class="tag">RFP / eAuction</span>
-              <span class="tag">CLM Governance</span>
+            <div class="chips">
+              <span class="chip">TOM</span><span class="chip">RACI</span><span class="chip">DOA</span><span class="chip">SOPs</span>
             </div>
           </article>
 
           <article class="card">
-            <h3 class="card__title">Procure-to-Pay (P2P)</h3>
-            <p class="card__text">
-              Requisitions, approvals, purchase orders, receipting, invoice controls, and exception handling—reducing manual work while increasing policy adherence.
+            <h3>Workflow automation</h3>
+            <p>
+              Automated routing, portals, templates, and evidence capture—reducing manual work and exceptions.
             </p>
-            <div class="tags">
-              <span class="tag">DOA / RACI</span>
-              <span class="tag">3-way match</span>
-              <span class="tag">Supplier Portal</span>
+            <div class="chips">
+              <span class="chip">Approvals</span><span class="chip">Portals</span><span class="chip">Templates</span><span class="chip">Audit trail</span>
             </div>
           </article>
 
           <article class="card">
-            <h3 class="card__title">Supplier Onboarding & Risk</h3>
-            <p class="card__text">
-              Onboarding frameworks, ESG/anti-bribery questionnaires, quality requirements, and scoring models to keep suppliers reliable and audit-ready.
+            <h3>Supplier onboarding & risk</h3>
+            <p>
+              Standardized onboarding, questionnaires, segmentation and scoring—structured for governance and scalability.
             </p>
-            <div class="tags">
-              <span class="tag">Due diligence</span>
-              <span class="tag">CSRD / CSDDD</span>
-              <span class="tag">Quality Controls</span>
+            <div class="chips">
+              <span class="chip">KYS</span><span class="chip">ABAC</span><span class="chip">ESG</span><span class="chip">Risk scoring</span>
             </div>
           </article>
         </div>
-      </div>
-    </section>
 
-    <!-- SOLUTIONS -->
-    <section class="section section--soft" id="solutions">
-      <div class="container">
-        <div class="sectionHead">
-          <h2 class="sectionHead__title">Solutions</h2>
-          <p class="sectionHead__text">
-            Packaged outcomes for common challenges in procurement and operational governance.
-          </p>
-        </div>
+        <div class="divider"></div>
 
         <div class="grid2">
           <article class="card card--wide">
-            <h3 class="card__title">Audit-ready procurement operating model</h3>
-            <p class="card__text">
-              Define target processes, controls, SOPs, approval matrices, and evidence points—then embed them into daily workflows and reporting.
+            <h3>Source-to-Contract and Procure-to-Pay</h3>
+            <p>
+              Build consistent sourcing and purchasing workflows that users actually follow—integrated with governance,
+              reporting, and supplier collaboration.
             </p>
-            <ul class="bullets">
-              <li>Policy-to-process mapping</li>
-              <li>Approval flows and delegated authority</li>
-              <li>Templates and evidence library</li>
-              <li>KPI / control monitoring cadence</li>
+            <ul class="list">
+              <li>RFX structure and evaluation frameworks</li>
+              <li>Contract evidence and obligation tracking</li>
+              <li>Requisition-to-PO automation and policy controls</li>
+              <li>Invoice validation and exception management</li>
             </ul>
           </article>
 
           <article class="card card--wide">
-            <h3 class="card__title">Supplier onboarding acceleration</h3>
-            <p class="card__text">
-              Standardize onboarding, reduce cycle time, and improve data quality and compliance coverage across your supplier base.
+            <h3>Compliance by design</h3>
+            <p>
+              Governance embedded into the workflow—so teams stay compliant without constant policing.
             </p>
-            <ul class="bullets">
-              <li>Questionnaire packs (ESG, ABAC, quality)</li>
-              <li>Risk scoring and segmentation</li>
-              <li>Vendor master data baseline</li>
-              <li>Onboarding workflows and SLAs</li>
+            <ul class="list">
+              <li>Evidence points defined upfront</li>
+              <li>Standard templates and controlled variants</li>
+              <li>Control monitoring and KPI cadence</li>
+              <li>Audit-ready traceability across transactions</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- APPROACH -->
-    <section class="section" id="approach">
+    <!-- AUTOMATION / PLATFORM STYLE SECTION -->
+    <section class="section section--tint" id="platform">
       <div class="container">
-        <div class="sectionHead">
-          <h2 class="sectionHead__title">Approach</h2>
-          <p class="sectionHead__text">
-            Structured engagement model that delivers clarity quickly and converts it into sustainable capability.
+        <div class="head">
+          <h2>Automation style</h2>
+          <p>
+            Designed like a product: clear user journeys, minimal friction, and measurable outcomes.
           </p>
         </div>
 
         <div class="split">
           <div class="card">
-            <h3 class="card__title">Delivery model</h3>
-            <ol class="steps">
-              <li><strong>Discover</strong> — current state mapping, stakeholder alignment, baseline metrics.</li>
-              <li><strong>Design</strong> — TOM, SOP set, DOA/RACI, controls and reporting.</li>
-              <li><strong>Implement</strong> — workflows, templates, training, rollout plan.</li>
-              <li><strong>Stabilize</strong> — monitoring, continuous improvement cadence, adoption support.</li>
-            </ol>
-
-            <div class="callout">
-              <div class="callout__title">Focus on adoption</div>
-              <div class="callout__text">We prioritize usability and clarity to drive consistent compliance without slowing the business.</div>
+            <h3>What gets automated</h3>
+            <div class="stack">
+              <div class="stackRow">
+                <div class="stackIcon">1</div>
+                <div>
+                  <strong>Intake & classification</strong>
+                  <div class="muted">Requests routed with the right data and policy checks.</div>
+                </div>
+              </div>
+              <div class="stackRow">
+                <div class="stackIcon">2</div>
+                <div>
+                  <strong>Approvals & exceptions</strong>
+                  <div class="muted">DOA-based approvals, smart escalations, fewer bottlenecks.</div>
+                </div>
+              </div>
+              <div class="stackRow">
+                <div class="stackIcon">3</div>
+                <div>
+                  <strong>Supplier collaboration</strong>
+                  <div class="muted">Onboarding, documents, invoices, and status in one place.</div>
+                </div>
+              </div>
+              <div class="stackRow">
+                <div class="stackIcon">4</div>
+                <div>
+                  <strong>Evidence & reporting</strong>
+                  <div class="muted">Audit trail generated automatically—no manual compilation.</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="mediaCard mediaCard--tall">
+          <div class="imgFrame" aria-label="Team collaboration image">
             <img
-              src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 551577.png"
-              alt="Procurement and operations meeting with dashboards"
+              src="./Firefly_Please generate real picture for website which show meaning of work, office, procurem 924317.png"
+              alt="Team collaboration in modern office"
             />
-            <div class="mediaCard__overlay" aria-hidden="true"></div>
-            <div class="mediaCard__caption">
-              Clear operating governance: process + controls + tools + people.
+            <div class="imgFrame__fade" aria-hidden="true"></div>
+            <div class="imgFrame__tag">
+              Automation is a change program — we drive adoption, not just configuration.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INDUSTRIES -->
-    <section class="section section--soft" id="industries">
+    <!-- OUTCOMES -->
+    <section class="section" id="outcomes">
       <div class="container">
-        <div class="sectionHead">
-          <h2 class="sectionHead__title">Industries</h2>
-          <p class="sectionHead__text">
-            NuWayMind is designed for environments where quality, documentation, and supplier performance are business-critical.
+        <div class="head">
+          <h2>Outcomes that stakeholders recognize</h2>
+          <p>
+            Clear value for Finance, Operations, Compliance, and end users—measured in cycle time, quality, and control.
           </p>
         </div>
 
         <div class="grid3">
-          <article class="card">
-            <h3 class="card__title">Healthcare providers</h3>
-            <p class="card__text">Spend visibility, standardization, and compliance controls for clinical and operational purchasing.</p>
+          <article class="stat">
+            <div class="stat__num">Less manual work</div>
+            <div class="stat__txt">Automate routing, templates, and evidence capture.</div>
           </article>
+          <article class="stat">
+            <div class="stat__num">Fewer exceptions</div>
+            <div class="stat__txt">Policy checks and approvals embedded into the workflow.</div>
+          </article>
+          <article class="stat">
+            <div class="stat__num">Audit-ready traceability</div>
+            <div class="stat__txt">Standard evidence and reporting across transactions.</div>
+          </article>
+        </div>
 
-          <article class="card">
-            <h3 class="card__title">Pharmaceutical & med-tech</h3>
-            <p class="card__text">Supplier qualification, quality requirements, and audit-ready evidence across procurement workflows.</p>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">IVF & fertility clinics</h3>
-            <p class="card__text">Consumables and equipment sourcing, contract governance, and supplier onboarding aligned to quality needs.</p>
-          </article>
+        <div class="quote">
+          <div class="quote__bar" aria-hidden="true"></div>
+          <div class="quote__text">
+            “Automation only works when the operating model is clear. We align the process, controls, and user journey first—then digitize.”
+          </div>
+          <div class="quote__who">NuWayMind delivery principle</div>
         </div>
       </div>
     </section>
 
-    <!-- INSIGHTS -->
-    <section class="section" id="insights">
+    <!-- HOW WE WORK -->
+    <section class="section section--tint" id="work">
       <div class="container">
-        <div class="sectionHead">
-          <h2 class="sectionHead__title">Insights</h2>
-          <p class="sectionHead__text">Short, practical topics that frequently drive fast improvements.</p>
+        <div class="head">
+          <h2>How we work</h2>
+          <p>
+            A structured engagement model designed to deliver value early and stabilize quickly.
+          </p>
         </div>
 
-        <div class="grid3">
-          <article class="card card--link">
-            <h3 class="card__title">How to stop “PO after the fact”</h3>
-            <p class="card__text">Practical controls, approval design, and adoption tactics that reduce compliance exceptions.</p>
-            <a class="card__cta" href="#contact">Ask for a checklist</a>
-          </article>
+        <div class="grid4">
+          <div class="step">
+            <div class="step__top">
+              <span class="step__n">01</span>
+              <span class="step__t">Discover</span>
+            </div>
+            <p>Current-state mapping, stakeholders, controls, baseline KPIs.</p>
+          </div>
 
-          <article class="card card--link">
-            <h3 class="card__title">Vendor onboarding: what to standardize</h3>
-            <p class="card__text">Core master data, ESG/ABAC packs, and minimum evidence needed for audit-ready onboarding.</p>
-            <a class="card__cta" href="#contact">Request templates</a>
-          </article>
+          <div class="step">
+            <div class="step__top">
+              <span class="step__n">02</span>
+              <span class="step__t">Design</span>
+            </div>
+            <p>TOM, DOA/RACI, SOP set, control points, reporting design.</p>
+          </div>
 
-          <article class="card card--link">
-            <h3 class="card__title">S2C playbook for regulated categories</h3>
-            <p class="card__text">RFX structure, evaluation criteria, and documentation flow to simplify approvals.</p>
-            <a class="card__cta" href="#contact">Get the framework</a>
-          </article>
+          <div class="step">
+            <div class="step__top">
+              <span class="step__n">03</span>
+              <span class="step__t">Implement</span>
+            </div>
+            <p>Workflow build, templates, onboarding packs, training, rollout.</p>
+          </div>
+
+          <div class="step">
+            <div class="step__top">
+              <span class="step__n">04</span>
+              <span class="step__t">Stabilize</span>
+            </div>
+            <p>Exception review, KPI cadence, adoption support, CI roadmap.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -325,71 +345,70 @@
       <div class="container">
         <div class="ctaBox">
           <div class="ctaBox__copy">
-            <h2 class="ctaBox__title">Ready to accelerate operational performance?</h2>
-            <p class="ctaBox__text">
-              Share your priority (S2C, P2P, supplier onboarding, compliance, or system enablement). We will propose a pragmatic first step with clear outcomes.
+            <h2>Let’s define your first automation win.</h2>
+            <p>
+              Tell us what you want to improve (approvals, onboarding, sourcing, invoicing, compliance evidence).
+              We will propose a pragmatic first step with measurable outcomes.
             </p>
 
             <form class="form" onsubmit="return false;">
               <div class="form__row">
                 <label class="field">
-                  <span class="field__label">Name</span>
-                  <input class="field__input" type="text" placeholder="Your name" />
+                  <span>Name</span>
+                  <input type="text" placeholder="Your name" class="inp" />
                 </label>
-
                 <label class="field">
-                  <span class="field__label">Email</span>
-                  <input class="field__input" type="email" placeholder="name@company.com" />
+                  <span>Email</span>
+                  <input type="email" placeholder="name@company.com" class="inp" />
                 </label>
               </div>
 
               <label class="field">
-                <span class="field__label">What do you need help with?</span>
-                <textarea class="field__input field__input--area" rows="4" placeholder="Example: reduce onboarding cycle time, redesign P2P approvals, implement supplier portal..."></textarea>
+                <span>What would you like to automate?</span>
+                <textarea rows="4" class="inp inp--area" placeholder="Example: redesign approval matrix, implement supplier onboarding workflow, reduce PO after the fact..."></textarea>
               </label>
 
               <div class="form__actions">
-                <a class="btn btn--primary" href="mailto:info@nuwaymind.com?subject=NuWayMind%20-%20Project%20Inquiry">Email NuWayMind</a>
+                <a class="btn btn--primary" href="mailto:info@nuwaymind.com?subject=NuWayMind%20-%20Automation%20Inquiry">Email NuWayMind</a>
                 <a class="btn btn--ghost" href="#top">Back to top</a>
               </div>
             </form>
           </div>
 
-          <div class="ctaBox__side">
+          <aside class="ctaBox__side">
             <div class="sideCard">
-              <div class="sideCard__title">Typical first engagements</div>
-              <ul class="bullets">
-                <li>2–3 week process + controls assessment</li>
-                <li>Supplier onboarding pack + workflow</li>
-                <li>P2P approval matrix redesign</li>
-                <li>S2C RFX templates + scorecards</li>
+              <div class="sideTitle">Common starting points</div>
+              <ul class="list">
+                <li>2–3 week operating model & control assessment</li>
+                <li>Supplier onboarding pack + workflow blueprint</li>
+                <li>Approval matrix redesign and automation</li>
+                <li>Invoice exception reduction playbook</li>
               </ul>
 
-              <div class="sideCard__divider"></div>
+              <div class="sideHr"></div>
 
-              <div class="sideCard__title">Contact</div>
-              <div class="sideCard__text">
-                Email: <a href="mailto:info@nuwaymind.com">info@nuwaymind.com</a><br />
-                Website: NuWayMind
+              <div class="sideTitle">Contact</div>
+              <div class="sideText">
+                <a href="mailto:info@nuwaymind.com">info@nuwaymind.com</a><br />
+                © <span id="year"></span> NuWayMind
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer__inner">
-        <div class="footer__left">
-          <div class="footer__brand">NuWayMind</div>
-          <div class="footer__muted">Arts of Applied Experience</div>
+    <footer class="ftr">
+      <div class="container ftr__inner">
+        <div class="ftr__left">
+          <div class="ftr__name">NuWayMind</div>
+          <div class="ftr__muted">Arts of Applied Experience</div>
         </div>
-        <div class="footer__right">
-          <a class="footer__link" href="#services">Services</a>
-          <a class="footer__link" href="#approach">Approach</a>
-          <a class="footer__link" href="#contact">Contact</a>
-          <span class="footer__muted">© <span id="year"></span></span>
+        <div class="ftr__right">
+          <a href="#capabilities">Capabilities</a>
+          <a href="#platform">Automation</a>
+          <a href="#work">How we work</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </footer>

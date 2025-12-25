@@ -1,27 +1,26 @@
 (function () {
-  // Year in footer
+  // Footer year
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 
-  // Mobile menu
-  const hamburger = document.getElementById("hamburger");
-  const mobileNav = document.getElementById("mobileNav");
+  // Mobile nav toggle
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mnav");
 
-  if (hamburger && mobileNav) {
+  if (btn && nav) {
     const toggle = () => {
-      const isOpen = mobileNav.classList.toggle("is-open");
-      hamburger.setAttribute("aria-expanded", String(isOpen));
-      mobileNav.setAttribute("aria-hidden", String(!isOpen));
+      const isOpen = nav.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+      nav.setAttribute("aria-hidden", String(!isOpen));
     };
 
-    hamburger.addEventListener("click", toggle);
+    btn.addEventListener("click", toggle);
 
-    // Close menu on link click
-    mobileNav.querySelectorAll("a").forEach(a => {
+    nav.querySelectorAll("a").forEach(a => {
       a.addEventListener("click", () => {
-        mobileNav.classList.remove("is-open");
-        hamburger.setAttribute("aria-expanded", "false");
-        mobileNav.setAttribute("aria-hidden", "true");
+        nav.classList.remove("is-open");
+        btn.setAttribute("aria-expanded", "false");
+        nav.setAttribute("aria-hidden", "true");
       });
     });
   }
