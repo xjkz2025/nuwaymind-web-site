@@ -27,6 +27,10 @@
 .left { flex: 1; }
 .right { flex: 0 0 auto; }
 
+.right img:hover {
+box-shadow: 0 10px 22px rgba(2, 6, 23, 0.1);
+}
+
 /* Lean cards */
 .panel {
   border: 1px solid var(--line);
