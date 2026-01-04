@@ -28,7 +28,8 @@
 .right { flex: 0 0 auto; }
 
 .right img:hover {
-box-shadow: 0 10px 22px rgba(2, 6, 23, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.08);
 }
 
 /* Lean cards */
