@@ -183,6 +183,12 @@ a {
     border-radius: 18px;
 }
 
+.heroimageU {
+    display:block;
+    margin-top: 48px;
+    border-radius: 18px;
+}
+
 .container {
   max-width: 1180px;
   margin: 0 auto;
