@@ -177,6 +177,12 @@ a {
   text-decoration: none;
 }
 
+.heroimage {
+    display:block;
+    margin-bottom: 48px;
+    border-radius: 18px;
+}
+
 .container {
   max-width: 1180px;
   margin: 0 auto;
@@ -534,6 +540,18 @@ h1 {
   gap: 14px;
 }
 
+.grid-b {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: rgba(56, 206, 231, 0.35);
+  gap: 14px;
+}
+
+.place-bgr-b {
+  background: rgba(56, 206, 231, 0.35);
+}
+
+
 .card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -543,7 +561,35 @@ h1 {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.card-b {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #4e5963;
+  padding: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-o {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #e6f4f7;
+  padding: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
 .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.08);
+  cursor: pointer;
+}
+
+.card-b:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.08);
+  cursor: pointer;
+}
+
+.card-o:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 30px rgba(2, 6, 23, 0.08);
   cursor: pointer;
@@ -556,6 +602,22 @@ h1 {
   text-align: left;
 }
 
+.card-b h4 {
+  margin: 0 0 8px;
+  font-size: 16.5pt;
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: #fff;
+}
+
+.card-o h4 {
+  margin: 0 0 8px;
+  font-size: 16.5pt;
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: #000;
+}
+
 .card:hover h4 {
   color: #38cee7;
 }
@@ -564,6 +626,18 @@ h1 {
   margin: 0;
   color: var(--muted);
   font-size: 14.5pt;
+}
+
+.card-b p {
+  margin: 0;
+  font-size: 14.5pt;
+  color: #fff;
+}
+
+.card-o p {
+  margin: 0;
+  font-size: 14.5pt;
+  color: #000;
 }
 
 .card-dark {
@@ -612,7 +686,43 @@ h1 {
   color: var(--accent2);
 }
 
+.tag-o {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 18pt;
+  color: #000;
+}
+
+.tag-b {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 18pt;
+  color: #fff;
+}
+
 .tag i {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(56, 206, 231, 0.14);
+  display: inline-block;
+}
+
+.tag-o i {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(56, 206, 231, 0.14);
+  display: inline-block;
+}
+
+.tag-b i {
   width: 10px;
   height: 10px;
   border-radius: 999px;
