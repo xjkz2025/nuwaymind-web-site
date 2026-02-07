@@ -193,6 +193,21 @@ a {
   max-width: 1180px;
   margin: 0 auto;
   padding: 22px 20px 72px;
+  
+}
+
+.container2 {
+/*    min-height: 420px;*/
+   height: 1536px;
+    padding: 0px 0px 0px;
+    display: flex;
+/*    align-items: center;*/
+    
+  background-image: url("../images/NuWayMind/PerformanceMeeting5.png");
+  background-size: cover;        /* fills the section */
+  background-position: center;   /* centers the image */
+  background-repeat: no-repeat;
+    
 }
 
 /* Top nav */
@@ -229,6 +244,7 @@ a {
 .navlinks a {
   font-size: 14.5pt;
   color: var(--muted);
+/*  color: #fff;*/
   padding: 8px 10px;
   border-radius: 12px;
 }
