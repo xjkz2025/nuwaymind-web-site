@@ -200,12 +200,27 @@ a {
 .container2 {
 /*    min-height: 420px;*/
 /*    height: 1536px;*/
-    height: 1136px;
+    height: 1336px;
     padding: 0px 0px 0px;
     display: flex;
 /*    align-items: center;*/
     
-  background-image: url("../images/NuWayMind/PerformanceMeeting16.png");
+  background-image: url("../images/NuWayMind/PerformanceMeeting19.png");
+  background-size: cover;        /* fills the section */
+  background-position: top;   /* centers the image */
+  background-repeat: no-repeat;
+    
+}
+
+.container3 {
+/*    min-height: 420px;*/
+/*    height: 1536px;*/
+    height: 764px;
+    padding: 0px 0px 0px;
+    display: flex;
+/*    align-items: center;*/
+    
+  background-image: url("../images/NuWayMind/PerformanceMeeting33.png");
   background-size: cover;        /* fills the section */
   background-position: top;   /* centers the image */
   background-repeat: no-repeat;
@@ -283,6 +298,17 @@ a {
   );
   border-color: rgba(56, 206, 231, 0.35);
 }
+
+.btn.primary-light {
+  background: linear-gradient(
+    180deg,
+    rgba(56, 206, 231, 1),
+    rgba(56, 206, 231, 0.5)
+  );
+  border-color: rgba(56, 206, 231, 0.35);
+  color:#FFF;
+}
+
 
 /* Hero */
 .hero {
